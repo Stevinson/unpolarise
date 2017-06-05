@@ -1,1 +1,23 @@
-h
+<!-- Footer partial which replicates Airbnb's footer. Included in the application.html.erb file -->
+<div class="footer-container text-center">
+  <div class="footer-content">
+    <ul class="footer-list list-inline">
+      <li>
+        <%= link_to "About", about_path, class: "footer-list-link" %>
+      </li>
+      <li>
+        <%= link_to "How to Use", howtouse_path, class: "footer-list-link" %>
+      </li>
+      <li>
+        <%= link_to "https://github.com/Stevinson/article-marketplace" do %>
+          <i class="fa fa-github footer-list-link" aria-hidden="true"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "https://en.wikipedia.org/wiki/Echo_chamber_\%28media\%29" do %>
+          <i class="fa fa-graduation-cap footer-list-link" aria-hidden="true"></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

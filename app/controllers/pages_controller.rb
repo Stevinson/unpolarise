@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def howtouse
   end
+
+  def analytics
+  end
 end
