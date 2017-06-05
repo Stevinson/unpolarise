@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'devise'
+# gem 'pundit' # Authentication
 
 gem 'sass-rails'
 gem 'jquery-rails'
