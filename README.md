@@ -8,4 +8,4 @@ Most of us are increasingly accessing our news online. Whilst this has brought s
 
 ## How It Works
 
-Unpolarise helps you to understand the news you consume and challenges your newsfeed bias with recommendations outside your conversational sphere. By browsing the data collected from your Facebook newsfeed, Unpolarise aims to allow you to step back by presenting you analytics of the news you read and by suggesting interesting articles giving alternative viewpoints.
+Unpolarise helps you to understand the news you consume and challenges your newsfeed bias with recommendations outside your conversational sphere. By browsing the news sources from your Facebook newsfeed and your 'liked' pages, Unpolarise aims to allow you to step back by presenting you analytics of the news you read and by suggesting interesting articles giving alternative viewpoints.
