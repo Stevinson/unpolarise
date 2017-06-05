@@ -1,1 +1,68 @@
-h
+<div class="navbar-wagon navbar-wagon-fixed">
+
+  <!-- Left Navigation -->
+  <div class="navbar-wagon-left hidden-xs">
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "unpolarise.svg" %>
+    <% end %>
+    <!-- Search form: The search form appears only if the user is logged in -->
+  </div>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs">
+    <% if user_signed_in? %>
+      <!-- Link to Articles owned by the user -->
+      <%= link_to "Analysis", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Link to Articles the user has booked -->
+      <%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Profile picture and dropdown -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% avatar_url = "http://placehold.it/50x50" %>
+          <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
+            <li><a href="#">Profile</a></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+
+    <% else %>
+      <!-- Redirecting to the About page -->
+      <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Redirecting to the About page -->
+      <%= link_to "How to Use", howtouse_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Sign up text link -->
+      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Login text link -->
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu-left">
+        <!-- The dropdown is going to change based on whether the user is logged in or not -->
+        <% if user_signed_in? %>
+          <li><%= link_to "Analysis", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><a href="#">Profile</a></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "How to Use", howtouse_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
