@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 # Data visualisation
 gem 'chartkick'
+gem 'highcharts-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
