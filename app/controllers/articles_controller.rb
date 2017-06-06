@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 
   # Whitelist and return a hash of the params required
   def article_params
-    params.require(:article).permit(:title, :summary, :url) # :photo
+    params.require(:article).permit(:title, :summary, :url, :photo)
   end
 
   # Find the article by its ID
