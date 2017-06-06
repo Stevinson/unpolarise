@@ -29,4 +29,6 @@ class User < ApplicationRecord
 
     return user
   end
+
+  # Methods that the view can access to act on the user stats to display using HighCharts
 end
