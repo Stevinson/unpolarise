@@ -9,6 +9,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'devise'
 # gem 'pundit' # Authentication
+# Cloudinary Images
+gem 'cloudinary'
+# Gems for Attichinary
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
 gem 'omniauth-facebook'
 
 gem 'sass-rails'
