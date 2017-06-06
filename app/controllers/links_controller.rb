@@ -11,6 +11,7 @@ class LinksController < ApplicationController
 
     binding.pry
 
+
     # id = params[:]
     # urls = params[:]
 
