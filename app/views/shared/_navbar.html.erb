@@ -13,7 +13,7 @@
   <div class="navbar-wagon-right hidden-xs">
     <% if user_signed_in? %>
       <!-- Link to Articles owned by the user -->
-      <%= link_to "Analysis", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Analysis", analytics_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Link to Articles the user has booked -->
       <%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
@@ -52,7 +52,7 @@
       <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu-left">
         <!-- The dropdown is going to change based on whether the user is logged in or not -->
         <% if user_signed_in? %>
-          <li><%= link_to "Analysis", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Analysis", analytics_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><a href="#">Profile</a></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
