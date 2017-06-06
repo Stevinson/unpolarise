@@ -1,0 +1,101 @@
+////  CSS for the smaller cards  ////
+.card-small {
+  padding: 0 5px;
+  position: relative;
+  height: 400px;
+}
+.card-small-title {
+  font-weight: bold;
+  color: black;
+  &:hover {
+    color: $unpolarise-orange;
+  }
+}
+.card-small-content {
+  font-weight: lighter;
+  color: $unpolarise-dark-grey;
+}
+
+////  CSS for the larger cards ////
+.card-large {
+  display: flex;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.card-large-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 40%;
+  padding: 0 10px 0 20px;
+  justify-content: flex-start;
+  a {
+    color: black;
+  }
+  .card-large-title {
+    font-weight: bold;
+    margin-top: 0;
+    h2 {
+      // margin-top: 0;
+      font-weight: bold;
+      color: black;
+    }
+    &:hover {
+      color: $unpolarise-orange;
+    }
+  }
+  .card-large-text {
+    font-weight: lighter;
+    color: $unpolarise-dark-grey;
+    // overflow: hidden;
+  }
+}
+.card-large-content-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 40%;
+  padding: 0 20px 0 0;
+  justify-content: flex-start;
+  a {
+    color: black;
+  }
+  .card-large-title {
+    font-weight: bold;
+    margin-top: 0;
+    h2 {
+      // margin-top: 0;
+      font-weight: bold;
+      color: black;
+    }
+    &:hover {
+      color: $unpolarise-orange;
+    }
+  }
+  .card-large-text {
+    font-weight: lighter;
+    color: $unpolarise-dark-grey;
+    // overflow: hidden;
+  }
+}
+.card-large-image {
+  flex: 0 0 60%;
+  height: 350px;
+  background-color: #d3d3d3;
+}
+
+//// CSS for the cards on the show page ////
+.card-show {
+  h2 {
+    font-weight: bold;
+  }
+}
+
+////  CSS for both cards ////
+
+.icon {
+  color: $unpolarise-orange;
+}
+// This is the container that holds the cards for a page
+.cards {
+  margin-top: 40px;
+}
+

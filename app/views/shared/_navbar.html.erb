@@ -12,10 +12,14 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs">
     <% if user_signed_in? %>
-      <!-- Link to Articles owned by the user -->
+
+      <!-- Link to Articles (all the resources), only accessible to admins -->
+      <%= link_to "Articles", articles_path, class: "navbar-wagon-item navbar-wagon-link btn-main-unpolarise" %>
+
+      <!-- Link to the analysis we're going to make about the user's FB data -->
       <%= link_to "Analysis", analytics_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Link to Articles the user has booked -->
+      <!-- Link to the articles we are going to suggest to the user based on his category-->
       <%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Profile picture and dropdown -->
