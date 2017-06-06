@@ -1,1 +1,9 @@
-<%= render 'form' %>
+<!-- This page is accessible only to admins (who need to be signed in so we can check they're admins) -->
+
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <%= render 'form' %>
+  <% else %>
+    <%= render 'shared/404' %>
+  <% end %>
+<% end %>

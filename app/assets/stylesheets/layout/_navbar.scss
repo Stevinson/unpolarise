@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 
-/* Optional class to fix the navbar on top */
+/* Fixing the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
   left: 0px;
@@ -24,35 +24,31 @@
   height: 25px;
 }
 
-/* Navbar right section (with form, links, button) */
+/* Navbar right section (with button, links and avatar) */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Navbar item */
+/* Navbar items */
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
 }
 
-/* Navbar standard link */
+/* Navbar links */
 .navbar-wagon-link {
-  color: #616668;
+  color: $unpolarise-dark-grey;
   font-size: 14px;
-}
-.navbar-wagon-link:hover {
-  color: $unpolarise-orange;
-  text-decoration: none;
+  &:hover {
+    color: $unpolarise-orange;
+    text-decoration: none;
+  };
 }
 
 /* Navbar dropdown menu right */
-
-.dropdown-menu {
-  left: -108px;
-}
 
 .navbar-wagon-dropdown-menu-right {
   margin-top: 15px;
