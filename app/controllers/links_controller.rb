@@ -8,19 +8,27 @@ class LinksController < ApplicationController
   # Action that receives the post request made from the extension (containing
   # their FB user ID and the links found)
   def create
-
-    binding.pry
-
-
-    # id = params[:]
-    # urls = params[:]
-
-    # First find user from facebook_id
-
+    # Get the user ID and urls that have been sent from the extension
+    id = params[:uid]
+    urls_string = params[:urls]
+    # Turn the urls which are currently a string, into an array
+    urls = urls_string.gsub(/[\[\]]/, '').split(', ')
+    # Find the user from facebook_id
+    user = User.where(uid: id)
+    # (I don't think we need a case when the user is not found as this is checked extension side?)
+    # Get access to all the sources
+    sources = Source.all
     # Iterate over each of the urls in user_links_hash[:links]
+    urls.each do |url|
       # Check the url against each of the sources 'url_base'
-      # If it matches then create a Links table entry
-      # This table entry should have a reference to the source that it matched and the user that has the same
+      sources.each do |source|
+        # If it matches then create a Links table entry with reference to the source and user matched
+        if url.include? source.url_base
+          binding.pry
+          Link.create!(url: url, user_id: user, source_id: source)
+        end
+      end
+    end
   end
 
   # Create stats from the data in the links DB for
