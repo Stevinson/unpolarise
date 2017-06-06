@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # Then check if that user exists in our database - if not it creates a new user
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
-    user_params.merge! auth.info.slice(:email, :first_name, :last_name, :friends)
+    user_params.merge! auth.info.slice(:email, :first_name, :last_name) # Add any extra fields we want here (and migration)
     user_params[:facebook_picture_url] = auth.info.image # Used to rename image field returned by FB
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
