@@ -11,6 +11,8 @@ class LinksController < ApplicationController
     # Get the user ID and urls that have been sent from the extension
     id = params[:uid]
     urls = params[:urls]
+    # NEED TO TURN THIS INTO AN ARRAY!! (from string)
+    urls.gsub!('[','').gsub!(']', '').split(',')
     # Find the user from facebook_id
     user = User.where(uid: id)
     # (I don't think we need a case when the user is not found as this is checked extension side?)
