@@ -11,8 +11,9 @@ class LinksController < ApplicationController
 
     binding.pry
 
-    id = params[:]
-    urls = params[:]
+
+    # id = params[:]
+    # urls = params[:]
 
     # First find user from facebook_id
 
