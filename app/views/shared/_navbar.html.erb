@@ -1,7 +1,7 @@
 <div class="navbar-wagon navbar-wagon-fixed">
 
   <!-- Left Navigation -->
-  <div class="navbar-wagon-left hidden-xs">
+  <div class="navbar-wagon-left">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "unpolarise.svg" %>
@@ -21,9 +21,9 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% avatar_url = "http://placehold.it/50x50" %>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/50x50" %>
           <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
+          <ul class="dropdown-menu navbar-wagon-dropdown-menu-right">
             <li><a href="#">Profile</a></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           </ul>
@@ -46,10 +46,10 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-lg">
+  <div class="navbar-wagon-item hidden-lg hidden-md hidden-sm">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu-left">
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
         <!-- The dropdown is going to change based on whether the user is logged in or not -->
         <% if user_signed_in? %>
           <li><%= link_to "Analysis", analytics_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
