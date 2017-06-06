@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     id = params[:uid]
     urls_string = params[:urls]
     # Turn the urls which are currently a string, into an array
-    urls = urls.gsub!(/[\[\]]/, '').split(',')
+    urls = urls_string.gsub(/[\[\]]/, '').split(', ')
     # Find the user from facebook_id
     user = User.where(uid: id)
     # (I don't think we need a case when the user is not found as this is checked extension side?)
@@ -24,8 +24,8 @@ class LinksController < ApplicationController
       sources.each do |source|
         # If it matches then create a Links table entry with reference to the source and user matched
         if url.include? source.url_base
-          Link.create!(url: url, user: user, source: source)
           binding.pry
+          Link.create!(url: url, user_id: user, source_id: source)
         end
       end
     end
