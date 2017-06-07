@@ -24,7 +24,6 @@ class LinksController < ApplicationController
       sources.each do |source|
         # If it matches then create a Links table entry with reference to the source and user matched
         if url.include? source.url_base
-          binding.pry
           Link.create!(url: url, user: user, source: source)
         end
       end
