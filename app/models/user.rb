@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :feeds
+  has_many :links, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
@@ -29,4 +29,6 @@ class User < ApplicationRecord
 
     return user
   end
+
+  # Methods that the view can access to act on the user stats to display using HighCharts
 end
