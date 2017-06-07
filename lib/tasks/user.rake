@@ -5,9 +5,10 @@ namespace :user do
   task update_sources_stats: :environment do
     users = User.all
     users.each do |user|
-      CreateStats.new(user).perform # Check that this line is correct!
+      CreateStats.new(user).perform
+      # Check that above line is correct! Should I be using: perform_later(user.id)
     end
   end
 end
-# perform_later(user.id)
+
 
