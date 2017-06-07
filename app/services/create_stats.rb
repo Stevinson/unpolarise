@@ -4,38 +4,35 @@
 class CreateStats
 
   # Constructor
-  # Accept input
-  def initialise(params)
-    # Class instances with @sign
-    @user = params[:user]
-    @links = params[:links]
+  def initialise(user, links) # params
+    # @user = params[:user]
+    # @links = params[:links]
+    @user = user # The user who the stats are for
+    @links = links # The links of this user
     @sources = Source.all
-
+    # Create a hash in which the keys are the news sources
+    @sources_stats = Hash.new(0)
+    @sources.all.each { |source| @sources_stats[source.name] }
   end
 
   # Perform work
   def perform
-    # Create a hash to store the info
     # Populate the hash with the relevant data
-    # Turn into
+    populate_sources_stats
+    # Return result
+    return @sources_stats
   end
-
-  # Different methods for each of the JSONb's
-
-  # Return result
 
   private
 
-  # Create a hash with the relevant keys
-  def
-  end
-
-  # Method that creates a hash from the DB
-  def
+  # Populate the news sources hash with the of count of how many matching links
+  def populate_sources_stats
+    # Iterate over each of a user's links, adding to the count of the corresponding source
+    @links.all.each { |link| @sources_stats[link.source.name] += 1 }
   end
 
   # Write the hash into a JSON
-  def
+  def hash_to_json
   end
 
 end
