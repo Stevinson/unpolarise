@@ -4,11 +4,10 @@
 class CreateStats
 
   # Constructor
-  def initialise(user, links) # params
+  def initialize(user) # params
     # @user = params[:user]
     # @links = params[:links]
-    @user = user # The user who the stats are for
-    @links = links # The links of this user
+    @user = user # The user who the stats are for (which also gives access to links)
     @sources = Source.all
     # Create a hash in which the keys are the news sources
     @sources_stats = Hash.new(0)
@@ -19,8 +18,10 @@ class CreateStats
   def perform
     # Populate the hash with the relevant data
     populate_sources_stats
+    @user.sources_stats = @sources_stats
+    @user.save
     # Return result
-    return @sources_stats
+    # return @sources_stats
   end
 
   private
@@ -28,7 +29,7 @@ class CreateStats
   # Populate the news sources hash with the of count of how many matching links
   def populate_sources_stats
     # Iterate over each of a user's links, adding to the count of the corresponding source
-    @links.all.each { |link| @sources_stats[link.source.name] += 1 }
+    @user.links.all.each { |link| @sources_stats[link.source.name] += 1 }
   end
 
   # Write the hash into a JSON
