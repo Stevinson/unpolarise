@@ -1,5 +1,5 @@
-# Service object that is run every X hours to perform the business logic that
-# creates the JSONb files that are given to a user to display the data collected
+# Service object that performs the business logic that creates manipulates
+# the stats that are given to a user to display the data collected
 # by the extension
 class CreateStats
 
@@ -20,8 +20,6 @@ class CreateStats
     populate_sources_stats
     @user.sources_stats = @sources_stats
     @user.save
-    # Return result
-    # return @sources_stats
   end
 
   private
@@ -31,15 +29,4 @@ class CreateStats
     # Iterate over each of a user's links, adding to the count of the corresponding source
     @user.links.all.each { |link| @sources_stats[link.source.name] += 1 }
   end
-
-  # Write the hash into a JSON
-  def hash_to_json
-  end
-
 end
-
-###
-# QUESTIONS
-###
-
-# 1. Do we just want to add to the stats or do we want to create the whole JSON again?

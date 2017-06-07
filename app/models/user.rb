@@ -34,4 +34,8 @@ class User < ApplicationRecord
   end
 
   # Methods that the view can access to act on the user stats to display using HighCharts
+  def self.most_fed_articles
+    # Get arrays for the different axes
+  end
 end
+
