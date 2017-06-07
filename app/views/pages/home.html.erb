@@ -1,3 +1,5 @@
+<!-- Logged out banner -->
+
 <div class="container">
 
   <!-- Display this banner only when the user is logged out -->
@@ -7,8 +9,10 @@
         <div class="banner">
           <div class="banner-content text-center">
             <p><%= image_tag("h1-home.svg", class: "width-500") %></p>
-            <h2>Understand the news you consume</h2>
-            <h3>BUTTON</h3>
+            <h2>Understand the news you consume online everyday</h2>
+            <p><br></p>
+            <%= link_to "Sign up with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form" %>
+            <div data-0="background-color:rgb(0,0,255);transform[bounce]:rotate(0deg);" data-top="background-color:rgb(255,0,0);transform[bounce]:rotate(360deg);">WOOOT</div>
           </div>
         </div>
       </div>
@@ -17,4 +21,50 @@
 
 </div>
 
-<p>Challenge your newsfeed bias with recommendations outside your conversational sphere</p>
+<!-- Explaining the concept -->
+
+<div class="wrapper-light-grey">
+  <div class="container text-center">
+    <p>Challenge your newsfeed bias with recommendations outside your conversational sphere</p>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>Step 1</p>
+        <p>Connect with Facebook</p>
+        <i class="fa fa-facebook fa-5x"></i><br>
+        <i class="fa fa-facebook fa-5x"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>Step 2</p>
+        <p>Download our Chrome Extension</p>
+        <i class="fa fa-facebook fa-5x"></i><br>
+        <i class="fa fa-facebook fa-5x"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>Step 3</p>
+        <p>Click</p>
+        <i class="fa fa-facebook fa-5x"></i><br>
+        <i class="fa fa-facebook fa-5x"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>Step 4</p>
+        <p>Analysis</p>
+        <i class="fa fa-facebook fa-5x"></i><br>
+        <i class="fa fa-facebook fa-5x"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>Step 5</p>
+        <p>Suggested Articles</p>
+        <i class="fa fa-facebook fa-5x"></i><br>
+        <i class="fa fa-facebook fa-5x"></i>
+      </div>
+    </div>
+  </div>
+</div>
