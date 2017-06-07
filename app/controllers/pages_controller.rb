@@ -5,9 +5,12 @@ class PagesController < ApplicationController
   def about
   end
 
-  def howtouse
+  def how_to_use
   end
 
   def analytics
+  end
+
+  def suggested_articles
   end
 end
