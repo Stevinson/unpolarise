@@ -1,27 +1,29 @@
 <div class="navbar-wagon navbar-wagon-fixed">
 
-  <!-- Left Navigation -->
-  <div class="navbar-wagon-left hidden-xs">
-    <!-- Logo -->
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "unpolarise.svg" %>
-    <% end %>
-    <!-- Search form: The search form appears only if the user is logged in -->
-  </div>
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "unpolarise.svg" %>
+  <% end %>
 
-  <!-- Right Navigation -->
+  <!-- Right Navigation (1. Button for admins / 2. Links / 3. Avatar) -->
   <div class="navbar-wagon-right hidden-xs">
     <% if user_signed_in? %>
-      <!-- Link to Articles owned by the user -->
+
+      <!-- Link to Articles (all the resources), only accessible to admins -->
+      <% if current_user.admin? %>
+        <%= link_to "Admin", rails_admin_path, class: "navbar-wagon-item navbar-wagon-link btn-main-unpolarise" %>
+      <% end %>
+
+      <!-- Link to the analysis we're going to make about the user's FB data -->
       <%= link_to "Analysis", analytics_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Link to Articles the user has booked -->
-      <%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <!-- Link to the articles we are going to suggest to the user based on his category-->
+      <%= link_to "Suggested Articles", suggested_articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% avatar_url = "http://placehold.it/50x50" %>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/50x50" %>
           <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
             <li><a href="#">Profile</a></li>
@@ -34,8 +36,8 @@
       <!-- Redirecting to the About page -->
       <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Redirecting to the About page -->
-      <%= link_to "How to Use", howtouse_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <!-- Redirecting to the How to use page -->
+      <%= link_to "How to Use", how_to_use_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Sign up text link -->
       <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -46,19 +48,19 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-lg">
+  <div class="navbar-wagon-item hidden-lg hidden-md hidden-sm">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu-left">
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
         <!-- The dropdown is going to change based on whether the user is logged in or not -->
         <% if user_signed_in? %>
           <li><%= link_to "Analysis", analytics_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Suggested Articles", user_articles_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Suggested Articles", suggested_articles_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><a href="#">Profile</a></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "How to Use", howtouse_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "How to Use", how_to_use_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <% end %>
