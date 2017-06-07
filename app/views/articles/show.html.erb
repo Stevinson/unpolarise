@@ -29,14 +29,6 @@
                 <p>Posted on <%= @article.created_at.to_date %></p>
               </div>
               <!-- Links to edit and delete -->
-              <div class="col-xs-2">
-                  <%= link_to edit_article_path(@article) do %>
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                  <% end %>
-                  <%= link_to article_path(@article), method: :delete do %>
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                  <% end %>
-              </div>
             </div>
 
             <!-- Summary -->

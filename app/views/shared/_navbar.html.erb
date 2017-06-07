@@ -11,7 +11,7 @@
 
       <!-- Link to Articles (all the resources), only accessible to admins -->
       <% if current_user.admin? %>
-        <%= link_to "Articles", articles_path, class: "navbar-wagon-item navbar-wagon-link btn-main-unpolarise" %>
+        <%= link_to "Admin", rails_admin_path, class: "navbar-wagon-item navbar-wagon-link btn-main-unpolarise" %>
       <% end %>
 
       <!-- Link to the analysis we're going to make about the user's FB data -->

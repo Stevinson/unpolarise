@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Devise routes
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
 
   get "/suggested_articles", to: "pages#suggested_articles" # We need a distinct path for this one, we're using the articles index in the admin section.
 
-  resources :articles
+  resources :articles, only: [:show] # All the other actions are managed through Rails Admin (index, new, create, update, delete)
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
