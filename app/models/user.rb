@@ -3,8 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :links, dependent: :destroy
 
-  # Run service object
+  # Make fields in DB readable as a hash
   serialize :sources_stats, Hash
+  serialize :info, Hash
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,

@@ -4,9 +4,12 @@ class ArticlesController < ApplicationController
   # The index is suggested articles, i.e. it only displays the active and correct
   # articles for the user's type
   def index
-    # @articles = Article.where("active = ? AND user = ?", true, )
-    # For now display all articles
-    @articles = Article.all
+    # Mapping from a user to the articles we want to show them
+    switch = { left: "right", right: "left" }
+    # Get the mapped category
+    display_class = switch[current_user.info[:category].to_sym]
+    # Get the articles we want to show this specific user
+    @articles = Article.where("active = ? AND category = ?", true, display_class)
   end
 
   def show
