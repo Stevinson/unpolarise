@@ -2,10 +2,10 @@
 # First empty DB
 Source.destroy_all
 # Constants for each category of source
-left = 1
+left = 1.0
 c_left = 0.25
 c_right = -0.25
-right = -1
+right = -1.0
 # Create the DB entries
 # Left
 Source.create!(name: "New Yorker", source_score: left, url_base: "www.newyorker.com")
