@@ -3,6 +3,8 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+// Logged Out Home Page
+
 .home-page-banner-margin {
   margin-bottom: 80px;
 }
@@ -57,3 +59,15 @@
   padding-top: 80px;
 }
 
+
+// Logged-in Home Page
+
+h2.logged-in-home-page {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+h3.logged-in-home-page {
+  font-size: 18.5px;
+  font-weight: lighter;
+}

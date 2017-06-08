@@ -29,24 +29,13 @@
   }
 }
 
-.btn-main-unpolarise {
-  border: 1px solid $unpolarise-orange-opacity-light;
-  color: $unpolarise-orange-opacity-dark;
+.btn-home-unpolarise {
+  background-color: $unpolarise-orange !important;
+  border: none;
+  color: $unpolarise-off-white;
+  border-radius: 3px;
   padding: 8px 24px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border-radius:3px;
-  text-align: center; // centering the text in the button
-  &:hover {
-    color: $unpolarise-orange-opacity-dark;
-    background-color: $unpolarise-orange-opacity-lightest;
-  }
-  &:active {
-    color: $unpolarise-orange-opacity-dark;
-  }
-  a {
-    color: $unpolarise-orange-opacity-dark;
-  }
+  // margin-left: 8px;
 }
 
 // Button on the home page to search

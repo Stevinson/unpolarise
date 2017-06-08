@@ -10,7 +10,7 @@
             <p><%= image_tag("h1-home.svg", class: "width-500") %></p>
             <h2>Understand the news you consume online everyday</h2>
             <p><br></p>
-            <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-form-unpolarise" do %>
+            <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-home-unpolarise" do %>
               Download our Chrome extension <i class="fa fa-chrome fa-lg" aria-hidden="true"></i>
             <% end %>
           </div>
@@ -110,9 +110,10 @@
     <div class="container home-page-banner-margin">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-          <div class="banner">
+          <div class="banner-logged-in">
             <div class="banner-content text-center">
-              <h2>Click on the button to launch your newsfeed analysis!</h2>
+              <h2 class="logged-in-home-page">Click on the button</h2>
+              <h3 class="logged-in-home-page">to launch your newsfeed analysis</h3>
               <p><br></p>
               <%= link_to analytics_path, class: "manual-button" do %>
                <div class="manual-button-space"></div>
