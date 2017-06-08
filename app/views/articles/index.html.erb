@@ -5,20 +5,24 @@
   <% if user_signed_in? %>
     <div class="row">
       <div class="col-xs-12 text-center">
-        <h1 class="header">Suggested articles</h1>
+        <h1 class="header">Your suggested articles</h1>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 text-center">
-        <h2 class="header2">Category Image</h2>
-        <h2 class="header2">Category Explanation</h2>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 justify">
+        <p class="txt-para">This weeks topic is healthcare - a subject that has featured a lot in the news, both recently and in general. The question as to the extent to which the State has an obligation to provide healthcare to its citizens particularly divides people, especially those on different sides on the pond. Here we present a few articles to challenge the prevailing view of that of your Facebook news feed.</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <p class="txt-para">This weeks topic is healthcare. A topic that is constantly in the news, it divides people, especially those on different sides on the pond. Here we present a few articles to challenge the prevailing view of that of your Facebook news feed.</p>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <div class="wrapper-temporary">
+            <% avatar_url = "http://placehold.it/50x50" %>
+            <p class="txt-para justify">
+              The aggregate of you newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     <div class="row">
       <% @articles.each_with_index do |article, index| %>
         <!-- Added a security so that if there is an article doesn't have a photo in the DB it doesn't break the website (and places a fixed image) -->
