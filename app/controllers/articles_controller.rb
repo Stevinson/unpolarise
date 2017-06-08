@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
     display_class = switch[current_user.info[:category].to_sym]
     # Get the articles we want to show this specific user
     @articles = Article.where("active = ? AND category = ?", true, display_class)
+    # Descriptions of each of the types
+    @types = { right: "This is because most of the sources of the news have, on aggregate, come from more conservative sources", left: "This is because most of the sources of the news have, on aggregate, come from more liberal sources" }
   end
 
   def show
