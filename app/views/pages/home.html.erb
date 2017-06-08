@@ -11,8 +11,7 @@
             <p><%= image_tag("h1-home.svg", class: "width-500") %></p>
             <h2>Understand the news you consume online everyday</h2>
             <p><br></p>
-            <%= link_to "Sign up with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form" %>
-            <div data-0="background-color:rgb(0,0,255);transform[bounce]:rotate(0deg);" data-top="background-color:rgb(255,0,0);transform[bounce]:rotate(360deg);">WOOOT</div>
+            <%= link_to "Sign up with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-form-unpolarise" %>
           </div>
         </div>
       </div>
@@ -20,6 +19,8 @@
   <% end %>
 
 </div>
+
+<!-- <div data-0="transform:translate(0px,0px);" data-500="transform:translate(1000px,1000px);"><i class="fa fa-circle fa-2x" aria-hidden="true"></i></div> -->
 
 <!-- Explaining the concept -->
 
