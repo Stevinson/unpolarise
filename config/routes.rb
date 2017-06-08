@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # Article
   resources :articles, only: [:show] # All the other actions are managed through Rails Admin (index, new, create, update, delete)
-  get 'suggested_articles', to: 'article#index', as: 'suggested_articles'
+  get 'suggested_articles', to: 'articles#index', as: 'suggested_articles'
 
   root to: 'pages#home'
 
