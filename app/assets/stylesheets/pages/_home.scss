@@ -2,7 +2,58 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-.wrapper-light-grey {
-  background-color: $unpolarise-lighter-grey;
-  padding: 50px 0;
+
+.home-page-banner-margin {
+  margin-bottom: 80px;
 }
+
+#backshape .wrapper-light-grey {
+  display:block;
+  float:left;
+  margin:50px auto 100px;
+  width:100%;
+  padding:0 5%;
+  transform:skew(0deg,-5deg);
+  background-size: cover;
+  padding: 50px 0;
+-ms-transform:skew(0deg,-10deg);
+-webkit-transform:skew(0deg,-5deg);
+}
+
+.mission-statement{
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+  transform:skew(0deg,-5deg);
+-ms-transform:skew(0deg,-10deg); /* IE 9 */
+-webkit-transform:skew(0deg,0deg); /* Safari and Chrome */
+}
+
+#backshape {
+  z-index:1;
+  display:block;
+  float:left;
+  margin-top:-100px;
+  width:100%;
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 50%);
+  transform:skew(0deg,10deg);
+  -ms-transform:skew(0deg,10deg); /* IE 9 */
+  -webkit-transform:skew(0deg,5deg); /* Safari and Chrome */
+}
+
+#backshape h2 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+#backshape p {
+  font-size: 15px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.step {
+  padding-top: 80px;
+}
+
