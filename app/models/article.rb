@@ -11,6 +11,9 @@ class Article < ApplicationRecord
       field :photo do
         partial 'direct_image_upload'
       end
+      field :active
+      field :category
+      field :source
     end
   end
 end

@@ -19,11 +19,19 @@
   padding-bottom: 5px;
 }
 
+.padded-top-20 {
+  padding-top: 20px;
+}
+
 .padded-top {
   padding-top: 35px;
 }
 .margin-bottom {
   margin-bottom: 30px;
+}
+
+.padded-bottom {
+  padding-bottom: 60px;
 }
 
 // Backgrounds
@@ -53,6 +61,7 @@ a:hover {
 
 body {
   margin-top: $navbar-height;
+  position: relative;
 }
 
 // General classes for text
@@ -63,6 +72,10 @@ body {
   font-weight: lighter;
   font-size: 20px;
   line-height: 1.5em;
+}
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 .header {
   margin-bottom: 20px;

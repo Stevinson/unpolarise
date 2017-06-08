@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="107px" height="126px" viewBox="0 0 107 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop HD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M103,100.999995 L103,20 L4,20 L4,101 C4,111.49341 26.1619049,120 53.5,120 C80.8380951,120 103,111.49341 103,101 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD">
+            <ellipse id="Oval" fill="#FF9283" cx="53.5" cy="105.151515" rx="52.5" ry="20.1515152"></ellipse>
+            <g id="Combined-Shape">
+                <use fill="#FF4F38" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#FF9283" stroke-width="1" d="M102.5,20.5 L4.5,20.5 L4.5,101 C4.5,111.086559 26.4192285,119.5 53.5,119.5 C80.5807737,119.5 102.5,111.086558 102.5,100.999995 L102.5,20.5 Z"></path>
+            </g>
+            <ellipse id="Oval" fill="#FF9283" cx="53.5" cy="20" rx="49.5" ry="19"></ellipse>
+        </g>
+    </g>
+</svg>
