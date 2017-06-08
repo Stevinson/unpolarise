@@ -1,7 +1,8 @@
 <!-- Logged out banner -->
 
-<div class="container">
 
+
+<div class="container home-page-banner-margin">
   <!-- Display this banner only when the user is logged out -->
   <% if user_signed_in? == false %>
     <div class="row">
@@ -11,61 +12,96 @@
             <p><%= image_tag("h1-home.svg", class: "width-500") %></p>
             <h2>Understand the news you consume online everyday</h2>
             <p><br></p>
-            <%= link_to "Sign up with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-form-unpolarise" %>
+            <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-form-unpolarise" do %>
+              Sign up with Facebook <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   <% end %>
-
 </div>
 
 <!-- <div data-0="transform:translate(0px,0px);" data-500="transform:translate(1000px,1000px);"><i class="fa fa-circle fa-2x" aria-hidden="true"></i></div> -->
 
 <!-- Explaining the concept -->
 
-<div class="wrapper-light-grey">
-  <div class="container text-center">
-    <p>Challenge your newsfeed bias with recommendations outside your conversational sphere</p>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <p>Step 1</p>
-        <p>Connect with Facebook</p>
-        <i class="fa fa-facebook fa-5x"></i><br>
-        <i class="fa fa-facebook fa-5x"></i>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <p>Step 2</p>
-        <p>Download our Chrome Extension</p>
-        <i class="fa fa-facebook fa-5x"></i><br>
-        <i class="fa fa-facebook fa-5x"></i>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <p>Step 3</p>
-        <p>Click</p>
-        <i class="fa fa-facebook fa-5x"></i><br>
-        <i class="fa fa-facebook fa-5x"></i>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <p>Step 4</p>
-        <p>Analysis</p>
-        <i class="fa fa-facebook fa-5x"></i><br>
-        <i class="fa fa-facebook fa-5x"></i>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <p>Step 5</p>
-        <p>Suggested Articles</p>
-        <i class="fa fa-facebook fa-5x"></i><br>
-        <i class="fa fa-facebook fa-5x"></i>
+<div id="backshape">
+  <div class="wrapper-light-grey">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="mission-statement">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <h2>Your newsfeed is subjective</h2>
+            <p>Most of us access our news online via social media platforms. Those news are brought to each of us based on opaque algorithms which show us viewpoints we already agree with.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="mission-statement">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            <h2>Get some transparency</h2>
+            <p>With Unpolarise, get insight into your newsfeed. With our analytics tool, you will be able to see where your news come from, how diverse your sources are - or not.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="mission-statement">
+            <i class="fa fa-unlock" aria-hidden="true"></i>
+            <h2>Regain some freedom of thought</h2>
+            <p>Based on our analysis of your newsfeed, we will recommend content on subjects you care about - but from different sources expressing diverse opinions on the same subject matter.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 step">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-inverse fa-stack-1x">1</i>
+      </span>
+      <p class="padded-top-20">Connect with Facebook</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 step">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-inverse fa-stack-1x">2</i>
+      </span>
+      <p class="padded-top-20">Download our Chrome Extension</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 step">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-inverse fa-stack-1x">3</i>
+      </span>
+      <p class="padded-top-20">Click</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 step">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-inverse fa-stack-1x">4</i>
+      </span>
+      <p class="padded-top-20">Analysis</p>
+    </div>
+  </div>
+  <div class="row padded-bottom">
+    <div class="col-sm-6 col-sm-offset-3 step">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-inverse fa-stack-1x">5</i>
+      </span>
+      <p class="padded-top-20">Suggested Articles</p>
+    </div>
+  </div>
+</div>
+
+
