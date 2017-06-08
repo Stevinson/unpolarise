@@ -38,3 +38,19 @@
   width: 750px;
 }
 
+// 'Manual' button on logged in home page
+.manual-button {
+  background: image-url('full-button.svg');
+  height: 126px;
+  width: 107px;
+  display: block;
+}
+
+.manual-button:hover {
+  background: image-url('clicked-button.svg');
+}
+
+a.manual-button{
+  margin: auto;
+}
+
