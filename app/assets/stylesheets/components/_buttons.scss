@@ -48,6 +48,7 @@
 
 .manual-button:hover {
   background: image-url('clicked-button.svg');
+  transition: 0.1s;
 }
 
 a.manual-button{
