@@ -1,5 +1,7 @@
 <% if user_signed_in? %>
-  <h1>Your Analytics</h1>
+  <div class="text-center">
+    <h1 class="header padded-top">Newsfeed Analytics</h1>
+  </div>
   <!-- Graph that displays the count of each category of site (i.e. 'left')  -->
   <%= pie_chart Link.group(:url).count.to_a, donut: true %>
   <!-- Graph that displays the count of each particular site-->

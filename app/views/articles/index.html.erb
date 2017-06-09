@@ -5,24 +5,35 @@
   <% if user_signed_in? %>
     <div class="row">
       <div class="col-xs-12 text-center">
-        <h1 class="header">Your suggested articles</h1>
+        <h1 class="header">Suggested Articles</h1>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 justify">
-        <p class="txt-para">This weeks topic is healthcare - a subject that has featured a lot in the news, both recently and in general. The question as to the extent to which the State has an obligation to provide healthcare to its citizens particularly divides people, especially those on different sides on the pond. Here we present a few articles to challenge the prevailing view of that of your Facebook news feed.</p>
+      <div class="col-xs-6">
+        <div class="card-top-index">
+          <div class="card-description">
+            <h2><i class="fa fa-globe" aria-hidden="true"></i> This week's topic: <strong>Healthcare</strong></h2>
+            <p>This subject has featured a lot in the news, both recently and in general.<br> The question as to the extent to which the State has an obligation to provide healthcare to its citizens particularly divides people, especially those on different sides on the pond.<br> Here we present a few articles to challenge the prevailing view of your Facebook news feed.</p>
+          </div>
+        </div>
       </div>
-    </div>
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <div class="wrapper-temporary">
-            <% avatar_url = "http://placehold.it/50x50" %>
-            <p class="txt-para justify">
-              The aggregate of you newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>
+      <div class="col-xs-6">
+        <div class="card-top-index">
+          <div class="card-description">
+            <div class="confidence-score">
+              <%= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
+              <%= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
+            </div>
+            <p>The aggregate of you newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>
             </p>
           </div>
         </div>
       </div>
+    </div>
+
+    <hr>
+
     <div class="row">
       <% @articles.each_with_index do |article, index| %>
         <!-- Added a security so that if there is an article doesn't have a photo in the DB it doesn't break the website (and places a fixed image) -->
@@ -32,7 +43,7 @@
           <% photo = image_path "default-background.jpg" %>
         <% end %>
         <!-- For every seventh article, display it with a large card (i.e. featured) -->
-        <% if index == 0 || index % 14 == 0 %>
+        <% if index == 0 || index % 8 == 0 %>
           <div class="col-xs-12">
             <div class="card-large">
               <div class="card-large-image" style="background-image: url('<%= photo %>') "></div>
@@ -44,7 +55,13 @@
                 <div class="card-large-text">
                   <!-- Author of article -->
                   <h4>By <%= article.source %></h4>
-                  <!-- Creation date -->
+                  <!-- Meta data -->
+                  <div class="card-category">
+                    <div class="card-category-content">
+                      <%= image_tag("http://placehold.it/50x50", class: "avatar-large") %>
+                      <p>Category: Left</p>
+                    </div>
+                  </div>
                   <!-- Summary of the article -->
                   <p><%= article.summary %></p>
                 </div>
@@ -52,7 +69,7 @@
             </div>
           </div>
         <!-- Every other featured article is to be flipped for style -->
-        <% elsif index % 7 == 0 %>
+        <% elsif index % 4 == 0 %>
           <div class="col-xs-12">
             <div class="card-large">
               <!-- Featured card contents on the left -->
@@ -65,6 +82,14 @@
                   <!-- Creation date -->
                   <!-- Average review -->
                   <!-- Summary of the article -->
+                  <h4>By <%= article.source %></h4>
+                  <!-- Meta data -->
+                  <div class="card-category">
+                    <div class="card-category-content">
+                      <%= image_tag("http://placehold.it/50x50", class: "avatar-large") %>
+                      <p>Category: Left</p>
+                    </div>
+                  </div>
                   <p><%= article.summary %></p>
                 </div>
               </div>
@@ -82,6 +107,14 @@
                 <div class="card-small-content">
                   <!-- Author (name shown if provided at signup) -->
                   <!-- date added -->
+                  <h4>By <%= article.source %></h4>
+                  <!-- Meta data -->
+                  <div class="card-category">
+                    <div class="card-category-content">
+                      <%= image_tag("http://placehold.it/50x50", class: "avatar-large") %>
+                      <p>Category: Left</p>
+                    </div>
+                  </div>
                   <p><%= article.summary %></p>
                 </div>
               </div>
