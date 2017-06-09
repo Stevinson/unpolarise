@@ -19,11 +19,12 @@
     </div>
   </div>
 
-  <!-- <div data-0="transform:translate(0px,0px);" data-500="transform:translate(1000px,1000px);"><i class="fa fa-circle fa-2x" aria-hidden="true"></i></div> -->
+
 
   <!-- Explaining the concept -->
 
   <div id="backshape">
+    <div data-100="transform:translate(0px,0px);" data-600="transform:translate(1440px,20px);"><%= image_tag("orange-line-1.svg") %></i></div>
     <div class="wrapper-light-grey">
       <div class="container">
         <div class="row">
@@ -51,7 +52,10 @@
         </div>
       </div>
     </div>
+    <div data-500="transform:translate(0px,0px);" data-1000="transform:translate(1440px,20px);"><%= image_tag("orange-line-2.svg") %></i></div>
   </div>
+
+
 
   <!-- Steps to use the product -->
 
@@ -62,7 +66,7 @@
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-inverse fa-stack-1x">1</i>
         </span>
-        <p class="padded-top-20">Connect with Facebook</p>
+        <p class="padded-top-20">Download our Chrome Extension</p>
       </div>
     </div>
     <div class="row">
@@ -71,7 +75,7 @@
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-inverse fa-stack-1x">2</i>
         </span>
-        <p class="padded-top-20">Download our Chrome Extension</p>
+        <p class="padded-top-20">Connect with Facebook</p>
       </div>
     </div>
     <div class="row">
@@ -80,7 +84,7 @@
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-inverse fa-stack-1x">3</i>
         </span>
-        <p class="padded-top-20">Click</p>
+        <p class="padded-top-20">Click to launch the analysis</p>
       </div>
     </div>
     <div class="row">
@@ -116,7 +120,7 @@
               <h3 class="logged-in-home-page">to launch your newsfeed analysis</h3>
               <p><br></p>
               <%= link_to analytics_path, class: "manual-button" do %>
-               <div class="manual-button-space"></div>
+                <div class="manual-button-space"></div>
               <% end %>
             </div>
           </div>
@@ -126,84 +130,33 @@
 
     <!-- <div data-0="transform:translate(0px,0px);" data-500="transform:translate(1000px,1000px);"><i class="fa fa-circle fa-2x" aria-hidden="true"></i></div> -->
 
-    <!-- Explaining the concept -->
+    <!-- Explaining how it works -->
 
     <div id="backshape">
       <div class="wrapper-light-grey">
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">
-              <div class="mission-statement">
-                <i class="fa fa-lock" aria-hidden="true"></i>
-                <h2>Your newsfeed is subjective</h2>
-                <p>Most of us access our news online via social media platforms. Those news are brought to each of us based on opaque algorithms which show us viewpoints we already agree with.</p>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="mission-statement">
-                <i class="fa fa-key" aria-hidden="true"></i>
-                <h2>Get some transparency</h2>
-                <p>With Unpolarise, get insight into your newsfeed. With our analytics tool, you will be able to see where your news come from, how diverse your sources are - or not.</p>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="mission-statement">
-                <i class="fa fa-unlock" aria-hidden="true"></i>
-                <h2>Regain some freedom of thought</h2>
-                <p>Based on our analysis of your newsfeed, we will recommend content on subjects you care about - but from different sources expressing diverse opinions on the same subject matter.</p>
-              </div>
+            <div class="text-center">
+              <h2>How does it all work? <i class="fa fa-cog fa-spin fa-fw"></i></h2>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Steps to use the product -->
-
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 step">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-inverse fa-stack-1x">1</i>
-          </span>
-          <p class="padded-top-20">Connect with Facebook</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 step">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-inverse fa-stack-1x">2</i>
-          </span>
-          <p class="padded-top-20">Download our Chrome Extension</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 step">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-inverse fa-stack-1x">3</i>
-          </span>
-          <p class="padded-top-20">Click</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 step">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-inverse fa-stack-1x">4</i>
-          </span>
-          <p class="padded-top-20">Analysis</p>
-        </div>
-      </div>
-      <div class="row padded-bottom">
-        <div class="col-sm-6 col-sm-offset-3 step">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-inverse fa-stack-1x">5</i>
-          </span>
-          <p class="padded-top-20">Suggested Articles</p>
+          <div class="row">
+            <div class="col-sm-4">
+              <h2>Step 1</h2>
+              <h3 id="how-it-works">Facebook Feed Data Parsing</h3>
+              <p id="how-it-works">We're looking at your Facebook feed thanks to our Chrome Extension and looking at all the news links we see on there.</p>
+            </div>
+            <div class="col-sm-4">
+              <h2>Step 2</h2>
+              <h3 id="how-it-works">Data Categorising and Analysis</h3>
+              <p id="how-it-works">Once we have all your Facebook newsfeed links, we analyse their source and categorise them. We render our analysis on your Analytics page.</p>
+            </div>
+            <div class="col-sm-4">
+              <h2>Step 3</h2>
+              <h3 id="how-it-works">Suggestions based on Categorising</h3>
+              <p id="how-it-works">Based on the overall categorisation of the news you receive, we will suggest articles that are out of those specific categories, to expose you to different viewpoints.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
