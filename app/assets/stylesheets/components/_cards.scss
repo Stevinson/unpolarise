@@ -100,3 +100,84 @@
   margin-top: 40px;
 }
 
+// Two special cards for the Articles Index page
+.card-top-index {
+  height: 280px;
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 30px;
+}
+
+.card-description h2 {
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+.card-description p {
+  font-size: 15px;
+}
+
+.confidence-score {
+  display: flex;
+  justify-content: space-around;
+}
+
+.confidence-score img {
+  margin-bottom: 30px;
+}
+
+// Card category
+.card-category {
+  background-color: $unpolarise-lighter-grey;
+  color: $unpolarise-dark-grey;
+  position: relative;
+  border-radius: 4px;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 0 30px 0;
+}
+
+.card-category-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+// .card-description {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 10px;
+// }
+// .card-user {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+// }
+// .card-category {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   font-size: 10px;
+//   text-transform: uppercase;
+// }
+
+
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index:2;
+//   background: black;
+//   opacity: 0;
+// }
+// .card-link:hover{
+//   opacity: 0.1;
+// }
+
+
