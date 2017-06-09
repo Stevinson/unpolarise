@@ -18,6 +18,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-xs-6">
         <div class="card-top-index">
           <div class="card-description">
@@ -92,9 +93,9 @@
                   </div>
                   <p><%= article.summary %></p>
                 </div>
+                <!-- Display article image -->
+                <div class="card-large-image" style="background-image: url('<%= photo %>') "></div>
               </div>
-              <!-- Display article image -->
-              <div class="card-large-image" style="background-image: url('<%= photo %>') "></div>
             </div>
           </div>
         <!-- For the rest of the articles display them with a small card -->
@@ -117,12 +118,12 @@
                   </div>
                   <p><%= article.summary %></p>
                 </div>
-              </div>
-            <% end %>
-          </div>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <!-- If the user is not signed in then show the signin form -->
   <% else %>
     <%= render 'shared/signin' %>
