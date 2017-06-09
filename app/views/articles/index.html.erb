@@ -73,16 +73,14 @@
         <% elsif index % 4 == 0 %>
           <div class="col-xs-12">
             <div class="card-large">
+              <div class="card-large-image" style="background-image: url('<%= photo %>') "></div>
               <!-- Featured card contents on the left -->
-              <div class="card-large-content-left">
+              <div class="card-large-content">
                 <%= link_to article_path(article) do %>
                   <h2 class="card-large-title"><%= article.title.capitalize %></h2>
                 <% end %>
                 <div class="card-large-text">
-                  <!-- Author -->
-                  <!-- Creation date -->
-                  <!-- Average review -->
-                  <!-- Summary of the article -->
+                  <!-- Author of article -->
                   <h4>By <%= article.source %></h4>
                   <!-- Meta data -->
                   <div class="card-category">
@@ -91,10 +89,9 @@
                       <p>Category: Left</p>
                     </div>
                   </div>
+                  <!-- Summary of the article -->
                   <p><%= article.summary %></p>
                 </div>
-                <!-- Display article image -->
-                <div class="card-large-image" style="background-image: url('<%= photo %>') "></div>
               </div>
             </div>
           </div>
@@ -118,12 +115,14 @@
                   </div>
                   <p><%= article.summary %></p>
                 </div>
-              <% end %>
-            </div>
-          <% end %>
+              </div>
+            <% end %>
+          </div>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
+
   <!-- If the user is not signed in then show the signin form -->
   <% else %>
     <%= render 'shared/signin' %>
