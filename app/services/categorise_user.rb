@@ -18,7 +18,7 @@ class CategoriseUser
     # Perform k-nearest or whatever algorithm we will use to categorise
     # ...
     # !! For now dumb implementation
-    @user_info[:category] = @user_info[:source_score] < 0 ? "left" : "right"
+    @user_info[:category] = @user_info[:source_score] < 0 ? "right" : "left"
     # Update a user's category
     @user.info = @user_info
     @user.save
