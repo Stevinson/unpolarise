@@ -10,11 +10,11 @@ class LinksController < ApplicationController
 
   def create
     # Get the user ID and links that have been sent from the extension
-    ex_email = params[:email] # received as a string
+    id = params[:id] # received as a string [to be checked]
     urls = params[:urls] # received as an array
     urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
     # Find the corresponding user
-    user = User.find_by(email: ex_email)
+    user = User.find_by(id: id)
     # Get access to all the sources
     sources = Source.all
     # Iterate over each of the urls if links received
