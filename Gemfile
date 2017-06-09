@@ -16,6 +16,8 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'omniauth-facebook'
+# Automate tasks
+gem 'whenever', :require => false
 
 # Admin side
 gem 'rails_admin', '~> 1.2'

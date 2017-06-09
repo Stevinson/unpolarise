@@ -1,7 +1,7 @@
 # Task that will be run in the background, once every X hours, which updates
 # every user's stats
 namespace :user do
-  desc "Updating users stats: the count of each news source"
+  desc "Categorising each user"
   task update_sources_stats: :environment do
     users = User.all
     users.each do |user|
