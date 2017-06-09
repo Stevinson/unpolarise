@@ -6,8 +6,8 @@ class ArticlesController < ApplicationController
   def index
     # Mapping from a user to the articles we want to show them
     switch = { left: "right", right: "left" }
-    # Get the mapped category
-    display_class = switch[current_user.info[:category].to_sym]
+    # Get the mapped category (if the current_user has associated info)
+    display_class = switch[current_user.info[:category].to_sym] if current_user.info[:category]
     # Get the articles we want to show this specific user
     @articles = Article.where("active = ? AND category = ?", true, display_class)
     # Descriptions of each of the types
