@@ -26,6 +26,7 @@
               <%= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
               <%= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
             </div>
+            <p class="bold">Confidence level: <%= current_user.info[:confidence] %>%</p>
             <p>The aggregate of you newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>
             </p>
           </div>
