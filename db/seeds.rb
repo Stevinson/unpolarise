@@ -1,12 +1,12 @@
 # Seed the different news sources
 # First empty DB
 Source.destroy_all
-# Constants for each category of source
+# # Constants for each category of source
 left = 1.0
 c_left = 0.25
 c_right = -0.25
 right = -1.0
-# Create the DB entries
+# Create the DB entries of news sources
 # Left
 Source.create!(name: "New Yorker", source_score: left, url_base: "www.newyorker.com")
 Source.create!(name: "The Guardian", source_score: left, url_base: "www.theguardian.com")
@@ -33,4 +33,23 @@ Source.create!(name: "Daily Mail", source_score: right, url_base: "www.dailymail
 Source.create!(name: "The Sun", source_score: right, url_base: "www.thesun.co.uk")
 Source.create!(name: "Daily Express", source_score: right, url_base: "www.express.co.uk")
 Source.create!(name: "Daily Star", source_score: right, url_base: "www.dailystar.co.uk")
+# Create the DB entries of news sources
+# Left
+Page.create!(name: "Syriza", source_score: left, url_component: "syrizaofficial")
+Page.create!(name: "Melenchon", source_score: left, url_component: "JLMelenchon")
+# Centre left
+Page.create!(name: "Labour Party", source_score: c_left, url_component: "labourparty")
+Page.create!(name: "Barack Obama", source_score: c_left, url_component: "barackobama")
+Page.create!(name: "Bernie Sanders", source_score: c_left, url_component: "berniesanders")
+# Centre right
+Page.create!(name: "Conservative Party", source_score: c_right, url_component: "conservatives")
+# Right
+Page.create!(name: "Marine Le Pen", source_score: right, url_component: "MarineLePen")
+Page.create!(name: "Nigel Farage", source_score: right, url_component: "nigelfarageofficial")
+Page.create!(name: "UKIP", source_score: right, url_component: "UKIP")
+Page.create!(name: "BNP", source_score: right, url_component: "OfficialBritishNationalParty")
+Page.create!(name: "Donald Trump", source_score: right, url_component: "DonaldTrump")
+
+
+
 
