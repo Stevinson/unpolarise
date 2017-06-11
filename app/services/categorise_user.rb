@@ -10,15 +10,14 @@ class CategoriseUser
 
   # Perform the logic
   def perform
-    # Calculate the score from the news sources
+    # Calculate the scores from the news sources
     @user_info[:source_score] = calculate_sources_score
-    @user_info[:confidence] = calculate_confidence
-    # Calculate the scores from any other data we collect
-    # ...
-    # Perform k-nearest or whatever algorithm we will use to categorise
-    # ...
-    # !! For now dumb implementation
-    @user_info[:category] = @user_info[:source_score] < 0 ? "right" : "left"
+    # Calculate the scores from the likes
+    @user_info[:like_score] = calculate_likes_score
+    # Calculate confidence score
+    @user_info[:confidence] = calculate_dumb_confidence
+    # Basic categorisation (for the data we have a nearest-neighbout/regression/SVM approach would be overkill and no correct)
+    @user_info[:category] = (@user_info[:source_score] + @user_info[:like_score]) < 0 ? "right" : "left"
     # Update a user's category
     @user.info = @user_info
     @user.save
@@ -35,11 +34,20 @@ class CategoriseUser
     return score.to_f / num_links
   end
 
+  # Calculate the likes_score as an aggregate of the user's friends' likes scores
+  def calculate_likes_score
+    return 0.0
+  end
+
   # Calculate a confidence score. This is just a number in the range {0,1}
   # which gives an idea of how many sources the categorisation is based on
-  def calculate_confidence
+  def calculate_dumb_confidence
     # Simple 'confidence' metric
-    confidence = @user.links.all.length / 100.0
+    source_confidence = @user.links.all.length / 100.0
+    #  Temporarily have likes confidence = 0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # likes_confidence = @user.likes.all.length / 100.0
+    likes_confidence = 0
+    confidence = (likes_confidence + source_confidence) / 200.0
     # The metric is {0,1} therefore limit
     return [confidence, 1].min
   end

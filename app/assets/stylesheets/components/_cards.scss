@@ -100,7 +100,7 @@
   margin-top: 40px;
 }
 
-// Two special cards for the Articles Index page
+// Card for the description of the weekly topic on the Articles Index page
 .card-top-index {
   height: 280px;
   background-color: $unpolarise-lighter-grey;
@@ -110,7 +110,7 @@
   padding: 30px 30px 30px 30px;
   margin-bottom: 30px;
 }
-
+// Card for the description of user on the Articles Index page
 .card-description h2 {
   font-size: 24px;
   padding-bottom: 20px;
@@ -120,16 +120,18 @@
   font-size: 15px;
 }
 
-.confidence-score {
+.card-items {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .confidence-score img {
   margin-bottom: 30px;
 }
 
-// Card category
+// Card category for the small cards on the articles on the suggested article page
 .card-category {
   background-color: $unpolarise-lighter-grey;
   color: $unpolarise-dark-grey;
