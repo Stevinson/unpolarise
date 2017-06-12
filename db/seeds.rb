@@ -1,5 +1,6 @@
 # Seed the different news sources
 # First empty DB
+Link.destroy_all # To make sure we can drop the sources seed as well.
 Source.destroy_all
 # # Constants for each category of source
 left = 1.0
@@ -33,20 +34,20 @@ Source.create!(name: "Daily Express", source_score: right, url_base: "/(\S+)www\
 Source.create!(name: "Daily Star", source_score: right, url_base: "/(\S+)www\.dailystar\.co\.uk(\S+)/")
 # Create the DB entries of news sources
 # Left
-Page.create!(name: "Syriza", source_score: left, url_component: "syrizaofficial")
-Page.create!(name: "Melenchon", source_score: left, url_component: "JLMelenchon")
-# Centre left
-Page.create!(name: "Labour Party", source_score: c_left, url_component: "labourparty")
-Page.create!(name: "Barack Obama", source_score: c_left, url_component: "barackobama")
-Page.create!(name: "Bernie Sanders", source_score: c_left, url_component: "berniesanders")
-# Centre right
-Page.create!(name: "Conservative Party", source_score: c_right, url_component: "conservatives")
-# Right
-Page.create!(name: "Marine Le Pen", source_score: right, url_component: "MarineLePen")
-Page.create!(name: "Nigel Farage", source_score: right, url_component: "nigelfarageofficial")
-Page.create!(name: "UKIP", source_score: right, url_component: "UKIP")
-Page.create!(name: "BNP", source_score: right, url_component: "OfficialBritishNationalParty")
-Page.create!(name: "Donald Trump", source_score: right, url_component: "DonaldTrump")
+# Page.create!(name: "Syriza", source_score: left, url_component: "syrizaofficial")
+# Page.create!(name: "Melenchon", source_score: left, url_component: "JLMelenchon")
+# # Centre left
+# Page.create!(name: "Labour Party", source_score: c_left, url_component: "labourparty")
+# Page.create!(name: "Barack Obama", source_score: c_left, url_component: "barackobama")
+# Page.create!(name: "Bernie Sanders", source_score: c_left, url_component: "berniesanders")
+# # Centre right
+# Page.create!(name: "Conservative Party", source_score: c_right, url_component: "conservatives")
+# # Right
+# Page.create!(name: "Marine Le Pen", source_score: right, url_component: "MarineLePen")
+# Page.create!(name: "Nigel Farage", source_score: right, url_component: "nigelfarageofficial")
+# Page.create!(name: "UKIP", source_score: right, url_component: "UKIP")
+# Page.create!(name: "BNP", source_score: right, url_component: "OfficialBritishNationalParty")
+# Page.create!(name: "Donald Trump", source_score: right, url_component: "DonaldTrump")
 
 
 
