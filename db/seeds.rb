@@ -22,7 +22,7 @@ Source.create!(name: "New York Times", source_score: c_left, url_base: "www.nyti
 Source.create!(name: "NBC News", source_score: c_left, url_base: "www.nbcnews.com")
 # Centre right
 Source.create!(name: "Sunday Times", source_score: c_right, url_base: "www.thetimes.co.uk/?sunday")
-Source.create!(name: "Wall Strret Journal", source_score: c_right, url_base: "www.wsj.com/europe")
+Source.create!(name: "Wall Street Journal", source_score: c_right, url_base: "www.wsj.com/europe")
 Source.create!(name: "Telegraph", source_score: c_right, url_base: "www.telegraph.co.uk")
 Source.create!(name: "Economist", source_score: c_right, url_base: "www.economist.com")
 # Right
