@@ -6,6 +6,7 @@ class User < ApplicationRecord
   # Make fields in DB readable as a hash
   serialize :sources_stats, Hash
   serialize :info, Hash
+  serialize :like_data, Hash
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,

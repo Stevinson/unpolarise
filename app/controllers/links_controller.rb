@@ -30,13 +30,4 @@ class LinksController < ApplicationController
       end
     end
   end
-
-  # Create stats from the data in the links DB for
-  def create_user_stats
-    # Every so often a JSONb file should be created and given to the 'users' table
-
-    # The first stats are a hash with the number of urls (value) from each site (key)
-
-    # Create other JSONb's for the other visualisations
-  end
 end
