@@ -6,15 +6,15 @@ class LinksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # Action that receives the post request made from the extension (containing
-  # their FB user ID and the links found)
+  # their FB name and the links found)
 
   def create
-    # Get the user ID and links that have been sent from the extension
-    id = params[:id] # received as a string [to be checked]
+    # Get the user name and links that have been sent from the extension
+    name = params[:name] # received as a string [to be checked]
     urls = params[:urls] # received as an array
     # urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
     # Find the corresponding user
-    user = User.find_by(id: id)
+    user = User.find_by(name: name)
     # Get access to all the sources
     sources = Source.all
     # Iterate over each of the urls if links received
