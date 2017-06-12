@@ -14,9 +14,11 @@ class FacebookPagesController < ApplicationController
     likes_array = params[:likes_array] # Receives an array of hashes
     # Find the corresponding user
     user = User.find_by(first_name: name)
+    binding.pry
     # Iterate over each of the hashes if received something
     if likes_array
-      user.like_data = likes_array # Needs to be a hash!!!!!!!!!!!!!!!!!!!
+      binding.pry
+      user.like_data = likes_array
       user.save
     end
   end
