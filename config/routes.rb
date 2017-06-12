@@ -24,8 +24,9 @@ Rails.application.routes.draw do
   #Logged out Home Page
   root to: 'pages#home'
 
-  # The links controller needs to have an action that receives the post requests from the extension
+  # The links and pages controllers need to have an action that receives the post requests from the extension
   resources :links, only: [:create]
+  resources :facebook_pages, only: [:create]
 
   # Facilitates the use of Attachinary
   mount Attachinary::Engine => "/attachinary"

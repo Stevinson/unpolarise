@@ -1,7 +1,7 @@
-# Controller that handles the parsing of the links from the Chrome extension.
-# It gives the User class JSON files that can be used for the visualisation
+# Controller that handles the parsing of the likes from the Chrome extension.
+# It updates the User info that can be used for the visualisation
 # of the data
-class LinksController < ApplicationController
+class FacebookPagesController < ApplicationController
   # So that we can test, temporarily remove authentification
   skip_before_action :verify_authenticity_token
 
