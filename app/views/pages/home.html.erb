@@ -22,9 +22,9 @@
   <!-- Explaining the concept -->
 
   <div id="backshape">
-    <div data-100="transform:translate(0px,0px);" data-600="transform:translate(1440px,20px);"><%= image_tag("orange-line-1.svg") %></i></div>
+    <div data-100="transform:translate(0px,0px);" data-600="transform:translate(1440px,0px);"><%= image_tag("orange-line-1.svg") %></i></div>
     <div class="wrapper-light-grey">
-      <div class="container">
+      <div class="container negative-margin">
         <div class="row">
           <div class="col-sm-4">
             <div class="mission-statement justify">
@@ -50,57 +50,60 @@
         </div>
       </div>
     </div>
-    <div data-500="transform:translate(0px,0px);" data-1000="transform:translate(1440px,20px);"><%= image_tag("orange-line-2.svg") %></i></div>
+    <div data-500="transform:translate(0px,0px);" data-1000="transform:translate(1440px,0px);"><%= image_tag("orange-line-2.svg") %></i></div>
   </div>
 
 
 
   <!-- Steps to use the product -->
+  <div class="step-icons">
+    <div id="step-1-icon">
+      <%= image_tag("chrome-grey.png") %>
+    </div>
+    <div id="step-2-icon">
+      <%= image_tag("facebook-grey.png") %>
+    </div>
+    <div id="step-3-icon">
+      <%= image_tag("play-grey.png") %>
+    </div>
+    <div id="step-4-icon">
+      <%= image_tag("piechart-grey.png") %>
+    </div>
+    <div id="step-5-icon">
+      <%= image_tag("heart-grey.png") %>
+    </div>
+  </div>
+
 
   <div class="container text-center">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 step">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-inverse fa-stack-1x">1</i>
-        </span>
+        <%= image_tag('1.svg') %>
         <p class="padded-top-20">Download our Chrome Extension</p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 step">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-inverse fa-stack-1x">2</i>
-        </span>
+        <%= image_tag('2.svg') %>
         <p class="padded-top-20">Connect with Facebook</p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 step">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-inverse fa-stack-1x">3</i>
-        </span>
+        <%= image_tag('3.svg') %>
         <p class="padded-top-20">Click to launch the analysis</p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 step">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-inverse fa-stack-1x">4</i>
-        </span>
-        <p class="padded-top-20">Analysis</p>
+        <%= image_tag('4.svg') %>
+        <p class="padded-top-20">Discover your newsfeed analysis</p>
       </div>
     </div>
     <div class="row padded-bottom">
       <div class="col-sm-6 col-sm-offset-3 step">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-inverse fa-stack-1x">5</i>
-        </span>
-        <p class="padded-top-20">Suggested Articles</p>
+        <%= image_tag('5.svg') %>
+        <p class="padded-top-20 padded-bottom">Read our recommended articles</p>
       </div>
     </div>
   </div>

@@ -37,6 +37,11 @@
   padding-bottom: 60px;
 }
 
+.negative-margin {
+  margin-top: -45px;
+  margin-bottom: -45px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -57,14 +62,16 @@ a:hover {
 }
 
 // Set a minimum height for each body so that the footer always appears at the base of a page
-.body-container {
-  min-height: calc(100vh - #{$navbar-height} - #{$footer-height} );
-  // padding-top: $navbar-height;
-}
+// .body-container {
+//   min-height: calc(100vh - #{$navbar-height} - #{$footer-height} );
+//   // padding-top: $navbar-height;
+// }
 
 body {
-  margin-top: $navbar-height;
+  // margin-top: $navbar-height;
   position: relative;
+  padding-top: $navbar-height;
+  padding-bottom: $footer-height;
 }
 
 // General classes for text
