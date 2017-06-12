@@ -23,7 +23,8 @@ class LinksController < ApplicationController
         # Check the url against each of the sources 'url_base'
         sources.each do |source|
           # If it matches then create a Links table entry with reference to the source and user matched
-          if url.include? source.url_base
+          regexp = Regexp.new(source.url_base)
+          if url.match(regexp)
             Link.create!(url: url, user: user, source: source)
           end
         end
