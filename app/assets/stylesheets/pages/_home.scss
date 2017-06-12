@@ -18,8 +18,6 @@
   transform:skew(0deg,-5deg);
   background-size: cover;
   padding: 50px 0;
--ms-transform:skew(0deg,-10deg);
--webkit-transform:skew(0deg,-5deg);
 }
 
 .mission-statement{
@@ -27,6 +25,7 @@
   color: black;
   font-size: 20px;
   transform:skew(0deg,-5deg);
+  padding: 0px 15px 0px 15px;
 -ms-transform:skew(0deg,-10deg); /* IE 9 */
 -webkit-transform:skew(0deg,0deg); /* Safari and Chrome */
 }
@@ -59,8 +58,50 @@
   padding-top: 80px;
 }
 
+// Section on the different steps to use our website
+.step-icons {
+  z-index: -1;
+}
 
-// Logged-in Home Page
+.step-icons img {
+  width: 200px;
+}
+
+#step-1-icon {
+  position: absolute;
+  top: 1145px;
+  left: 450px;
+}
+
+#step-2-icon {
+  position: absolute;
+  top: 1305px;
+  right: 450px;
+}
+
+#step-3-icon {
+  position: absolute;
+  top: 1485px;
+  left: 450px;
+}
+
+#step-4-icon {
+  position: absolute;
+  top: 1655px;
+  right: 450px;
+}
+
+#step-5-icon {
+  position: absolute;
+  top: 1835px;
+  left: 450px;
+}
+
+
+/////////////////////////////////////////////////////////
+// Logged-in Home Page (routed to show page of a user) //
+/////////////////////////////////////////////////////////
+
 
 h2.logged-in-home-page {
   font-size: 30px;
@@ -80,4 +121,8 @@ h3#how-it-works {
 p#how-it-works {
   font-size: 16px;
   font-weight: lighter;
+}
+
+.inner-working {
+  padding: 0px 15px 0px 15px;
 }

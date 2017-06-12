@@ -147,6 +147,49 @@
   align-items: center;
 }
 
+// Card for Login page
+
+.card-login {
+  background-color: $unpolarise-lighter-grey;
+  color: $unpolarise-dark-grey;
+  position: relative;
+  border-radius: 4px;
+  padding: 60px 60px 20px 60px;
+  margin: 20px 0 30px 0;
+  height: 300px;
+}
+
+.card-login-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    margin-top: 20px;
+  }
+}
+
+// Card for Signup page
+
+.card-signup {
+  background-color: $unpolarise-lighter-grey;
+  color: $unpolarise-dark-grey;
+  position: relative;
+  border-radius: 4px;
+  padding: 60px 60px 20px 60px;
+  margin: 20px 0 30px 0;
+  height: 540px;
+}
+
+.card-signup-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    margin-top: 20px;
+  }
+}
+
+
 
 
 // .card-description {
