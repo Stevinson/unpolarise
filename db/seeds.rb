@@ -37,18 +37,27 @@ Source.create!(name: "Daily Star", source_score: right, url_base: "www.dailystar
 # Left
 Page.create!(name: "Syriza", source_score: left, url_component: "syrizaofficial")
 Page.create!(name: "Melenchon", source_score: left, url_component: "JLMelenchon")
+Page.create!(name: "Jeremy Corbyn", source_score: left, url_component: "JeremyCorbynMP")
+Page.create!(name: "Communist Party", source_score: left, url_component: "communism101")
 # Centre left
 Page.create!(name: "Labour Party", source_score: c_left, url_component: "labourparty")
 Page.create!(name: "Barack Obama", source_score: c_left, url_component: "barackobama")
 Page.create!(name: "Bernie Sanders", source_score: c_left, url_component: "berniesanders")
+Page.create!(name: "Hillary Clinton", source_score: c_left, url_component: "hillaryclinton")
+Page.create!(name: "Sadiq Khan", source_score: c_left, url_component: "sadiqforlondon")
+Page.create!(name: "Daily Show", source_score: c_left, url_component: "dailyshow")
 # Centre right
 Page.create!(name: "Conservative Party", source_score: c_right, url_component: "conservatives")
+Page.create!(name: "David Cameron", source_score: c_right, url_component: "DavidCameronOfficial")
+Page.create!(name: "Boris Johnson", source_score: c_right, url_component: "borisjohnson")
+Page.create!(name: "Jeremy Kyle", source_score: c_right, url_component: "Jeremykyle")
 # Right
 Page.create!(name: "Marine Le Pen", source_score: right, url_component: "MarineLePen")
 Page.create!(name: "Nigel Farage", source_score: right, url_component: "nigelfarageofficial")
 Page.create!(name: "UKIP", source_score: right, url_component: "UKIP")
 Page.create!(name: "BNP", source_score: right, url_component: "OfficialBritishNationalParty")
 Page.create!(name: "Donald Trump", source_score: right, url_component: "DonaldTrump")
+
 
 
 
