@@ -31,4 +31,9 @@ class CreateStats
     @user.links.all.each { |link| @sources_stats[link.source.name] += 1 }
   end
 
+  # Get the top 5 news sources from a user's links
+  def top_news_sources
+
+  end
+
 end
