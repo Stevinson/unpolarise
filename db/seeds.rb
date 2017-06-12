@@ -1,5 +1,6 @@
 # Seed the different news sources
 # First empty DB
+Link.destroy_all # To make sure we can drop the sources seed as well.
 Source.destroy_all
 # # Constants for each category of source
 left = 1.0
@@ -57,6 +58,7 @@ Page.create!(name: "Nigel Farage", source_score: right, url_component: "nigelfar
 Page.create!(name: "UKIP", source_score: right, url_component: "UKIP")
 Page.create!(name: "BNP", source_score: right, url_component: "OfficialBritishNationalParty")
 Page.create!(name: "Donald Trump", source_score: right, url_component: "DonaldTrump")
+
 
 
 

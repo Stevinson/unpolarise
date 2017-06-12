@@ -2,23 +2,38 @@
 <div class="container padded-top body-container">
   <div class="row">
     <div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3">
-      <div class="form-content">
-        <div class="text-center">
-          <p>Our app works in combination with your facebook account to provide insight on the news you receive. As such you must be signed into Facebook to use our tools.</p>
-          <br>
-        </div>
-        <!-- Give the user the option to sign in with Facebook -->
-        <%= link_to "Sign up with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form" %>
-        <!-- A nice break between the two options -->
-        <div class="padded-top-bottom text-center padded-top">
-          <p>or</p>
-          <p>Already signed up?</p>
-        </div>
-        <!-- Redirect user to the sign in page (for when they are already a user) -->
-        <div class="form-actions">
-          <%= link_to "Log in", new_session_path(resource_name), class: "btn-facebook btn-form btn-form-unpolarise" %>
+
+      <div class="card-signup">
+        <div class="card-signup-content">
+          <div class="form-content">
+            <div class="text-center">
+              <p>Our app works in combination with your facebook account to provide insight on the news you receive. As such you must be signed into Facebook to use our tools.</p>
+              <br>
+            </div>
+            <!-- Give the user the option to sign in with Facebook -->
+            <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form" do %>
+              Sign up with Facebook <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+            <% end %>
+            <!-- A nice break between the two options -->
+            <div class="padded-top-bottom text-center padded-top">
+              <p>or</p>
+              <p>Already signed up?</p>
+            </div>
+            <!-- Redirect user to the sign in page (for when they are already a user) -->
+            <div class="form-actions">
+              <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-form-unpolarise" do %>
+                Log in with Facebook <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+
         </div>
       </div>
+
+
+
+
+
     </div>
   </div>
 </div>
