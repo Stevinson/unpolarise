@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     # Get the user ID and links that have been sent from the extension
     id = params[:id] # received as a string [to be checked]
     urls = params[:urls] # received as an array
-    urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
+    # urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
     # Find the corresponding user
     user = User.find_by(id: id)
     # Get access to all the sources
