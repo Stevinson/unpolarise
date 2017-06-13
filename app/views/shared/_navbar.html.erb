@@ -1,14 +1,8 @@
 <div class="navbar-wagon navbar-wagon-fixed">
 
   <!-- Logo -->
-  <% if user_signed_in? %>
-    <%= link_to user_path(current_user), class: "navbar-wagon-brand" do %>
-      <%= image_tag "unpolarise.svg" %>
-    <% end %>
-  <% else %>
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "unpolarise.svg" %>
-    <% end %>
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "unpolarise.svg" %>
   <% end %>
 
 

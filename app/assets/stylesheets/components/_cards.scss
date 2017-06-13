@@ -209,6 +209,51 @@
   margin-bottom: 30px;
 }
 
+#card-graph-1 {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 30px;
+  position: absolute;
+  left: 40px;
+  top: 160px;
+}
+
+#card-graph-2 {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 30px;
+  position: absolute;
+  right: 40px;
+  top: 160px;
+}
+
+#card-graph-3 {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 30px;
+  position: absolute;
+  right: 40px;
+  top: 545px;
+  width: 660px;
+  h4 {
+    font-size: 17px;
+    font-weight: bolder;
+  }
+}
+
+#empty-div-1 {
+  height: 650px;
+}
+
 // .card-description {
 //   position: absolute;
 //   bottom: 10px;

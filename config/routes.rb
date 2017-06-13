@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get "/analytics", to: 'pages#analytics'
 
+  get "/friends_analytics", to: 'pages#friends_analytics'
+
   get "/disclaimer", to: 'pages#disclaimer'
 
   # get "/suggested_articles", to: "pages#suggested_articles" # We need a distinct path for this one, we're using the articles index in the admin section.
@@ -18,8 +20,6 @@ Rails.application.routes.draw do
   # Article
   resources :articles, only: [:show] # All the other actions are managed through Rails Admin (index, new, create, update, delete)
   get 'suggested_articles', to: 'articles#index', as: 'suggested_articles'
-
-  resources :users, only: [:show]
 
   #Logged out Home Page
   root to: 'pages#home'
