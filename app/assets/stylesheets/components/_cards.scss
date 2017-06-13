@@ -189,8 +189,25 @@
   }
 }
 
+// Card for the Analytics page
 
+.card-analytics {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 30px;
+}
 
+.card-top-analytics {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 30px;
+}
 
 // .card-description {
 //   position: absolute;

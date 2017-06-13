@@ -5,74 +5,82 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Graph that displays the count of each particular site-->
-            <%= area_chart Link.where(user: current_user).group(:url).count.to_a %>
+            <%= area_chart Link.where(user: current_user).group(:url).count.to_a, colors: ["#FF4F38", "#999"] %>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
-            <%= pie_chart Source.joins(:links).group(:source_score).count.to_a, donut: true %>
+            <%= pie_chart (
+              {
+                "Left" => Source.joins(:links).where(source_score: 1.0).count,
+                "Center Left" => Source.joins(:links).where(source_score: 0.25).count,
+                "Center Right" => Source.joins(:links).where(source_score: -0.25).count,
+                "Right" => Source.joins(:links).where(source_score: -1.0).count
+              }
+            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"]
+            %>
           </div>
         </div>
       </div>
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-top-analytics">
           <div class="card-description">
             <!-- List of the top 5 news sites  -->
             <h4>Top News Sources</h4>
             <!-- Get a sorted array of arrays with news source name and link count -->
             <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
-            <ul>
+            <ol>
               <li><%= sorted_sources[0][0] %> - <%= sorted_sources[0][1] %></li>
               <li><%= sorted_sources[1][0] %> - <%= sorted_sources[1][1] %></li>
               <li><%= sorted_sources[2][0] %> - <%= sorted_sources[2][1] %></li>
               <li><%= sorted_sources[3][0] %> - <%= sorted_sources[3][1] %></li>
               <li><%= sorted_sources[4][0] %> - <%= sorted_sources[4][1] %></li>
-            </ul>
+            </ol>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Graph that displays the count of how many friends like each particular topic -->
-            <%= area_chart Link.where(user: current_user).group(:url).count.to_a %>
+            <%= area_chart Link.where(user: current_user).group(:url).count.to_a, colors: ["#FF4F38", "#999"] %>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
-            <%= pie_chart Source.joins(:links).group(:source_score).count.to_a, donut: true %>
+            <%= pie_chart Source.joins(:links).group(:source_score).count.to_a, donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"] %>
           </div>
         </div>
       </div>
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-top-analytics">
           <div class="card-description">
             <!-- List of the top 5 news sites  -->
             <h4>Top News Sources</h4>
             <!-- Get a sorted array of arrays with topic name and topic count -->
             <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
-            <ul>
+            <ol>
               <li><%= sorted_sources[0][0] %> - <%= sorted_sources[0][1] %></li>
               <li><%= sorted_sources[1][0] %> - <%= sorted_sources[1][1] %></li>
               <li><%= sorted_sources[2][0] %> - <%= sorted_sources[2][1] %></li>
               <li><%= sorted_sources[3][0] %> - <%= sorted_sources[3][1] %></li>
               <li><%= sorted_sources[4][0] %> - <%= sorted_sources[4][1] %></li>
-            </ul>
+            </ol>
           </div>
         </div>
       </div>
@@ -82,5 +90,6 @@
 <% else %>
   <%= render 'shared/signin' %>
 <% end %>
+
 
 
