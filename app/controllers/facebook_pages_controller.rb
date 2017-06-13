@@ -11,7 +11,7 @@ class FacebookPagesController < ApplicationController
   def create
     # Get the user ID and links that have been sent from the extension
     name = params["name"] # String which is the user's name
-    likes_array = params["likes_array"].to_h # Receives an array of hashes
+    likes_array = params["likes_array"].to_h
     # Find the corresponding user
     user = User.find_by(first_name: name)
     # binding.pry
