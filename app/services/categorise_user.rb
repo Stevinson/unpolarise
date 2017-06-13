@@ -47,27 +47,19 @@ class CategoriseUser
     return [confidence, 1].min
   end
 
-  # # Create a hash of the number of likes for each page
-  # def create_likes_hash
-  #   # Iterate over each page and get number of friend's likes from FB
-  #   Page.all.each do |page|
-  #     url = "www.mbasic.facebook.com/#{page.url}/socialcontext"
-  #     count = JS(url)
-  #     likes_info = {}
-  #     likes_info[page.name.to_sym] = count
-  #   end
-  #   return likes_info
-  # end
-
-  # # Calculate the likes_score as an aggregate of the user's friends' likes scores
-  # def calculate_likes_score(likes_info)
-  #   score = 0
-  #   # Iterate over the
-  #   likes_info.each do |key, value|
-  #     # Get access to the political score of each page
-  #     val = Page.where(name: key).source_score
-  #     score += val.to_f * value
-  #   end
-  #   return score
-  # end
+  # Calculate the likes_score as an aggregate of the user's friends' likes scores
+  def calculate_likes_score
+    score = 0
+    # Check that the user has like data
+    if @user.like_info
+      # Accumalate the number in each category to calculate like_score
+      likes_hash = Hash.new(0)
+      @user.like_data.each { |name, d| likes_hash[d["source_score"]] += 1 }
+      likes_array = likes_hash.to_a
+      likes_array.each do |score_num_pair|
+        score += (score_num_pair[0].to_f * score_num_pair[1])
+      end
+    end
+    return score
+  end
 end
