@@ -23,10 +23,10 @@
     <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
     <%= pie_chart (
       {
-        "Left" => Source.joins(:links).where(source_score: 1.0).count,
-        "Center Left" => Source.joins(:links).where(source_score: 0.25).count,
-        "Center Right" => Source.joins(:links).where(source_score: -0.25).count,
-        "Right" => Source.joins(:links).where(source_score: -1.0).count
+        "Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 1.0).count,
+        "Center Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 0.25).count,
+        "Center Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -0.25).count,
+        "Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -1.0).count
       }
     ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "650px", height: "350px", title: "Distribution of these news sources"
     %>
