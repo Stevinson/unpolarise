@@ -5,25 +5,33 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Graph that displays the count of each particular site-->
-            <%= area_chart Link.where(user: current_user).group(:url).count.to_a %>
+            <%= area_chart Link.where(user: current_user).group(:url).count.to_a, colors: ["#FF4F38", "#999"] %>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
-            <%= pie_chart Source.joins(:links).group(:source_score).count.to_a, donut: true %>
+            <%= pie_chart (
+              {
+                "Left" => Source.joins(:links).where(source_score: 1.0).count,
+                "Center Left" => Source.joins(:links).where(source_score: 0.25).count,
+                "Center Right" => Source.joins(:links).where(source_score: -0.25).count,
+                "Right" => Source.joins(:links).where(source_score: -1.0).count
+              }
+            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"]
+            %>
           </div>
         </div>
       </div>
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-top-analytics">
           <div class="card-description">
             <!-- List of the top 5 news sites  -->
             <h4>Top News Sources</h4>
@@ -43,29 +51,29 @@
     <!-- Graphs related to the likes data -->
     <div class="row">
       <div class="col-xs-12">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Graph that displays the count of how many friends like each particular topic -->
             <% array = [] %>
             <% current_user.like_data.each { |name, d| array << [d["name"], d["friend_likes"]] } %>
-            <%= area_chart array %>
+            <%= area_chart array, colors: ["#FF4F38", "#999"]  %>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-analytics">
           <div class="card-description">
             <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
             <% hash = Hash.new(0) %>
             <% current_user.like_data.each { |name, d| hash[d["source_score"]] += 1 } %>
-            <%= pie_chart hash.to_a, donut: true %>
+            <%= pie_chart hash.to_a, donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"]  %>
           </div>
         </div>
       </div>
       <div class="col-xs-6">
-        <div class="card-top-index">
+        <div class="card-top-analytics">
           <div class="card-description">
             <!-- List of the top 5 news sites  -->
             <h4>Top News Sources</h4>
@@ -87,5 +95,6 @@
 <% else %>
   <%= render 'shared/signin' %>
 <% end %>
+
 
 
