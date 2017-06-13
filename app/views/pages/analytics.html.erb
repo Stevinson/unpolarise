@@ -29,23 +29,26 @@
             <h4>Top News Sources</h4>
             <!-- Get a sorted array of arrays with news source name and link count -->
             <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
-            <ul>
+            <ol>
               <li><%= sorted_sources[0][0] %> - <%= sorted_sources[0][1] %></li>
               <li><%= sorted_sources[1][0] %> - <%= sorted_sources[1][1] %></li>
               <li><%= sorted_sources[2][0] %> - <%= sorted_sources[2][1] %></li>
               <li><%= sorted_sources[3][0] %> - <%= sorted_sources[3][1] %></li>
               <li><%= sorted_sources[4][0] %> - <%= sorted_sources[4][1] %></li>
-            </ul>
+            </ol>
           </div>
         </div>
       </div>
     </div>
+    <!-- Graphs related to the likes data -->
     <div class="row">
       <div class="col-xs-12">
         <div class="card-top-index">
           <div class="card-description">
             <!-- Graph that displays the count of how many friends like each particular topic -->
-            <%= area_chart Link.where(user: current_user).group(:url).count.to_a %>
+            <% array = [] %>
+            <% current_user.like_data.each { |name, d| array << [d["name"], d["friend_likes"]] } %>
+            <%= area_chart array %>
           </div>
         </div>
       </div>
@@ -55,7 +58,9 @@
         <div class="card-top-index">
           <div class="card-description">
             <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
-            <%= pie_chart Source.joins(:links).group(:source_score).count.to_a, donut: true %>
+            <% hash = Hash.new(0) %>
+            <% current_user.like_data.each { |name, d| hash[d["source_score"]] += 1 } %>
+            <%= pie_chart hash.to_a, donut: true %>
           </div>
         </div>
       </div>
@@ -64,15 +69,15 @@
           <div class="card-description">
             <!-- List of the top 5 news sites  -->
             <h4>Top News Sources</h4>
-            <!-- Get a sorted array of arrays with topic name and topic count -->
-            <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
-            <ul>
-              <li><%= sorted_sources[0][0] %> - <%= sorted_sources[0][1] %></li>
-              <li><%= sorted_sources[1][0] %> - <%= sorted_sources[1][1] %></li>
-              <li><%= sorted_sources[2][0] %> - <%= sorted_sources[2][1] %></li>
-              <li><%= sorted_sources[3][0] %> - <%= sorted_sources[3][1] %></li>
-              <li><%= sorted_sources[4][0] %> - <%= sorted_sources[4][1] %></li>
-            </ul>
+            <!-- Get a sorted array of array of hashes with page name and page info -->
+            <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
+            <ol>
+              <li><%= sorted_pages[0][1]["name"] %> - <%= sorted_pages[0][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[1][1]["name"] %> - <%= sorted_pages[1][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[2][1]["name"] %> - <%= sorted_pages[2][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[3][1]["name"] %> - <%= sorted_pages[3][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[4][1]["name"] %> - <%= sorted_pages[4][1]["friend_likes"] %></li>
+            </ol>
           </div>
         </div>
       </div>
