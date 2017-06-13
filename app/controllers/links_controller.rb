@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     # Get the user name and links that have been sent from the extension
     name = params[:name] # received as a string [to be checked]
     urls = params[:urls] # received as an array
-    binding.pry
+    # binding.pry
     # urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
     # Find the corresponding user
     user = User.find_by(name: name)
