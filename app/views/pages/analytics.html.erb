@@ -17,7 +17,8 @@
     <!-- Graph that displays the count of each particular site-->
     <% array = Link.joins(:source).where(user_id: current_user.id).group(:source_id).count.to_a %>
     <% array.each { |pair| pair[0] = Source.find(pair[0]).name } %>
-    <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "650px", height: "600px" %>
+    <% array = array.sort_by { |pair| pair[1] }.reverse %>
+    <%= bar_chart array, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "650px", height: "600px" %>
   </div>
 
   <div id="card-graph-2">
@@ -37,11 +38,11 @@
     <!-- List of the top 5 news sites  -->
     <h4>Top News Sources</h4>
     <!-- Get a sorted array of arrays with news source name and link count -->
-    <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
+    <%# sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
     <ol>
       <% (0..4).each do |i| %>
-        <% if sorted_sources[i] %>
-          <li><%= sorted_sources[i][0] %> - <%= sorted_sources[0][1] %></li>
+        <% if array[i] %>
+          <li><%= array[i][0] %> - <%= array[i][1] %></li>
         <% end %>
       <% end %>
     </ol>
