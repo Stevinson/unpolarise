@@ -15,7 +15,8 @@
 
   <div id="card-graph-1">
     <!-- Graph that displays the count of each particular site-->
-    <% array = Link.where(user: current_user).group(:url).count.to_a %>
+    <% array = Link.joins(:source).where(user_id: current_user.id).group(:source_id).count.to_a %>
+    <% array.each { |pair| pair[0] = Source.find(pair[0]).name } %>
     <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "650px", height: "600px" %>
   </div>
 
