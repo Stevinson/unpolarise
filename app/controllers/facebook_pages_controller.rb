@@ -11,14 +11,15 @@ class FacebookPagesController < ApplicationController
   def create
     # Get the user ID and links that have been sent from the extension
     name = params["name"] # String which is the user's name
-    likes_array = params["likes_array"].to_unsafe_h.to_hash
+    likes_hash = params["likes_array"].to_unsafe_h.to_hash
+    likes_hash.each { |hash, data| data["friend_likes"] = data["friend_likes"].to_i }
     # Find the corresponding user
     user = User.find_by(first_name: name)
     # binding.pry
     # Iterate over each of the hashes if received something
-    if likes_array
+    if likes_hash
       # binding.pry
-      user.like_data = likes_array
+      user.like_data = likes_hash
       user.save
     end
   end
