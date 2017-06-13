@@ -1,0 +1,75 @@
+<% if user_signed_in? %>
+
+
+  <!-- .... -->
+  <!-- Tabs -->
+  <!-- .... -->
+
+  <%= render 'tabs_analytics', active: :friends_analytics %>
+
+  <!-- ................... -->
+  <!-- Content of the Tabs -->
+  <!-- ................... -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="card-analytics">
+          <div class="card-description">
+            <!-- Graph that displays the count of how many friends like each particular topic -->
+            <% array = [] %>
+            <% current_user.like_data.each { |name, d| array << [d["name"], d["friend_likes"]] } %>
+            <%= area_chart array, colors: ["#FF4F38", "#999"] %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="card-analytics">
+          <div class="card-description">
+            <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
+            <% hash = Hash.new(0) %>
+            <% current_user.like_data.each { |name, d| hash[d["source_score"]] += 1 } %>
+
+
+            <%= pie_chart (
+              {
+                "Left" => hash["1"],
+                "Center Left" => hash["0.25"],
+                "Center Right" => hash["-0.25"],
+                "Right" => hash["-1"]
+              }
+            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"]
+            %>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="card-top-analytics">
+          <div class="card-description">
+            <!-- List of the top 5 news sites  -->
+            <h4>Top News Sources</h4>
+            <!-- Get a sorted array of array of hashes with page name and page info -->
+            <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
+            <ol>
+              <li><%= sorted_pages[0][1]["name"] %> - <%= sorted_pages[0][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[1][1]["name"] %> - <%= sorted_pages[1][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[2][1]["name"] %> - <%= sorted_pages[2][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[3][1]["name"] %> - <%= sorted_pages[3][1]["friend_likes"] %></li>
+              <li><%= sorted_pages[4][1]["name"] %> - <%= sorted_pages[4][1]["friend_likes"] %></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<% else %>
+  <%= render 'shared/signin' %>
+<% end %>
+
+
+
