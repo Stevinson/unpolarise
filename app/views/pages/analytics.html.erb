@@ -67,7 +67,7 @@
           <div class="card-description">
             <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
             <% hash = Hash.new(0) %>
-            <% current_user.like_data.each { |name, d| hash[d["source_score"]] += 1 } %>
+            <% current_user.like_data.each { |name, d| hash[d["source_score"]] += d["friend_likes"] } %>
             <%= pie_chart hash.to_a, donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"]  %>
           </div>
         </div>

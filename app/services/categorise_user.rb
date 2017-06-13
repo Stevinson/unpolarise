@@ -14,8 +14,10 @@ class CategoriseUser
     @user_info[:source_score] = calculate_sources_score
     # Calculate the scores from the likes
     @user_info[:like_score] = calculate_likes_score
+    # Calculate accuracy score
+    @user_info[:confidence] = calculate_dumb_accuracy
     # Calculate confidence score
-    @user_info[:confidence] = calculate_dumb_confidence
+    @user_info[:accuracy] = calculate_dumb_confidence
     # Basic categorisation (for the data we have a nearest-neighbout/regression/SVM approach would be overkill and no correct)
     @user_info[:category] = (@user_info[:source_score] + @user_info[:like_score]) < 0 ? "right" : "left"
     # Update a user's category
@@ -34,9 +36,9 @@ class CategoriseUser
     return score.to_f / num_links
   end
 
-  # Calculate a confidence score. This is just a number in the range {0,1}
+  # Calculate an accuracy score. This is just a number in the range {0,1}
   # which gives an idea of how many sources the categorisation is based on
-  def calculate_dumb_confidence
+  def calculate_dumb_accuracy
     # Simple 'confidence' metric
     source_confidence = @user.links.all.length / 100.0
     #  Temporarily have likes confidence = 0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -45,6 +47,20 @@ class CategoriseUser
     confidence = (likes_confidence + source_confidence) / 200.0
     # The metric is {0,1} therefore limit
     return [confidence, 1].min
+  end
+
+  # Calculate a confidence score. This is a number in the the range {0,1}
+  # which gives an idea of how close the user is to the decision boundary
+  def calculate_dumb_confidence
+    # We already know the user's postion:
+    x0 = @user_info[:source_score]
+    y0 = @user_info[:like_score]
+    # Get the point on the boundary closest to the user
+    x = (x0 - y0) / 2
+    y = (y0 - x0) / 2
+    # Can now get the distance between those two points
+    distance = sqrt((x0 - x)^2 + (y0 - y)^2)
+    confidence = distance / sqrt(2)
   end
 
   # Calculate the likes_score as an aggregate of the user's friends' likes scores

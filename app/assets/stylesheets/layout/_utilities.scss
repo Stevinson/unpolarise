@@ -61,6 +61,11 @@ a:hover {
   text-decoration: none;
 }
 
+// Make all active button (the moment after clicking before anything happens) the correct colour
+a:active {
+  color: $unpolarise-orange;
+}
+
 // Set a minimum height for each body so that the footer always appears at the base of a page
 // .body-container {
 //   min-height: calc(100vh - #{$navbar-height} - #{$footer-height} );
