@@ -38,11 +38,11 @@
             <!-- Get a sorted array of arrays with news source name and link count -->
             <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
             <ol>
-              <li><%= sorted_sources[0][0] %> - <%= sorted_sources[0][1] %></li>
-              <li><%= sorted_sources[1][0] %> - <%= sorted_sources[1][1] %></li>
-              <li><%= sorted_sources[2][0] %> - <%= sorted_sources[2][1] %></li>
-              <li><%= sorted_sources[3][0] %> - <%= sorted_sources[3][1] %></li>
-              <li><%= sorted_sources[4][0] %> - <%= sorted_sources[4][1] %></li>
+              <% (0..4).each do |i| %>
+                <% if sorted_sources[i] %>
+                  <li><%= sorted_sources[i][0] %> - <%= sorted_sources[0][1] %></li>
+                <% end %>
+              <% end %>
             </ol>
           </div>
         </div>
@@ -80,11 +80,11 @@
             <!-- Get a sorted array of array of hashes with page name and page info -->
             <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
             <ol>
-              <li><%= sorted_pages[0][1]["name"] %> - <%= sorted_pages[0][1]["friend_likes"] %></li>
-              <li><%= sorted_pages[1][1]["name"] %> - <%= sorted_pages[1][1]["friend_likes"] %></li>
-              <li><%= sorted_pages[2][1]["name"] %> - <%= sorted_pages[2][1]["friend_likes"] %></li>
-              <li><%= sorted_pages[3][1]["name"] %> - <%= sorted_pages[3][1]["friend_likes"] %></li>
-              <li><%= sorted_pages[4][1]["name"] %> - <%= sorted_pages[4][1]["friend_likes"] %></li>
+              <% (0..4).each do |i| %>
+                <% if sorted_pages[i][1]["name"] %>
+                  <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+                <% end %>
+              <% end %>
             </ol>
           </div>
         </div>
