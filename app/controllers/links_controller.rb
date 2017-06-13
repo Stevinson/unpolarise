@@ -13,7 +13,7 @@ class LinksController < ApplicationController
     name = params[:name] # received as a string [to be checked]
     urls = params[:urls] # received as an array
     binding.pry
-    urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
+    # urls = urls.gsub(/[\[\]]/, '').split(', ') # Just for testing with Postman
     # Find the corresponding user
     user = User.find_by(name: name)
     # Get access to all the sources
