@@ -33,17 +33,17 @@
   </div>
 
   <div id="card-graph-3">
-      <!-- List of the top 5 news sites  -->
-      <h4>Top News Sources</h4>
-      <!-- Get a sorted array of arrays with news source name and link count -->
-      <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
-      <ol>
-        <li><%= sorted_sources[0][0] %> - <%= sorted_sources[0][1] %></li>
-        <li><%= sorted_sources[1][0] %> - <%= sorted_sources[1][1] %></li>
-        <li><%= sorted_sources[2][0] %> - <%= sorted_sources[2][1] %></li>
-        <li><%= sorted_sources[3][0] %> - <%= sorted_sources[3][1] %></li>
-        <li><%= sorted_sources[4][0] %> - <%= sorted_sources[4][1] %></li>
-      </ol>
+    <!-- List of the top 5 news sites  -->
+    <h4>Top News Sources</h4>
+    <!-- Get a sorted array of arrays with news source name and link count -->
+    <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
+    <ol>
+      <% (0..4).each do |i| %>
+        <% if sorted_sources[i] %>
+          <li><%= sorted_sources[i][0] %> - <%= sorted_sources[0][1] %></li>
+        <% end %>
+      <% end %>
+    </ol>
   </div>
 
 <% else %>
