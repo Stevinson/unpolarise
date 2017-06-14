@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
   # Each article is to have one image
   has_attachment :photo
+  has_many :bookmarks
+  has_many :users, through: :bookmarks
 
   # This part is for the configuration of Rails Admin, so that we can upload an image with Attachinary.
   rails_admin do

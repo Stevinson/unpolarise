@@ -1,0 +1,24 @@
+#article-image {
+  position: relative;
+}
+
+#btn-hidden {
+  display: none;
+}
+
+#bookmark {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 50px;
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+.bookmark-item {
+  width: 50px;
+
+}

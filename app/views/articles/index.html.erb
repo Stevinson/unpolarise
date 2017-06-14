@@ -26,7 +26,7 @@
               <div class="text-center bold">
                 <p>Category:</p>
                   <% if current_user.info[:category] %>
-                    <%= image_tag("left.png") %>
+                    <%= image_tag("#{current_user.info[:category]}.png") %>
                     <%#= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
                   <% else %>
                     <%= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
@@ -36,31 +36,34 @@
                 <p>Confidence:</p>
                 <%#= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
                 <div class="avatar-confidence-score">
-                  <p> <%= current_user.info[:confidence] %>%</p>
+                  <% if current_user.info[:confidence] %>
+                    <p> <%= current_user.info[:confidence] %>%</p>
+                  <% else %>
+                    <p>n/a</p>
+                  <% end %>
                 </div>
               </div>
               <div class="text-center bold">
                 <p>Accuracy:</p>
                 <%#= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
                 <div class="avatar-accuracy-score">
+                <% if current_user.info[:accuracy] %>
                   <p> <%= current_user.info[:accuracy] %>%</p>
+                <% else %>
+                  <p>n/a</p>
+                <% end %>
                 </div>
               </div>
             </div>
             <% if current_user.info[:category] %>
-              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.
+              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.</p>
             <% else %>
               <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later.</p>
             <% end %>
-            </p>
           </div>
         </div>
       </div>
     </div>
-
-
-
-
 
     <hr>
 
@@ -88,7 +91,7 @@
                   <!-- Meta data -->
                   <div class="card-category">
                     <div class="card-category-content">
-                      <%= image_tag("right.png", class: "avatar-70") %>
+                      <%= image_tag("#{article.category}.png", class: "avatar-70") %>
                       <p>Category: <%= article.category %> </p>
                     </div>
                   </div>
@@ -114,7 +117,7 @@
                   <!-- Meta data -->
                   <div class="card-category">
                     <div class="card-category-content">
-                      <%= image_tag("http://placehold.it/50x50", class: "avatar-large") %>
+                      <%= image_tag("#{article.category}.png", class: "avatar-large") %>
                       <p>Category: <%= article.category %></p>
                     </div>
                   </div>
@@ -138,7 +141,7 @@
                   <!-- Meta data -->
                   <div class="card-category">
                     <div class="card-category-content">
-                      <%= image_tag("http://placehold.it/50x50", class: "avatar-large") %>
+                      <%= image_tag("#{article.category}.png", class: "avatar-70") %>
                       <p>Category: <%= article.category %></p>
                     </div>
                   </div>
