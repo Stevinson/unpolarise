@@ -54,53 +54,9 @@
   margin-bottom: 20px;
 }
 
-.step {
-  padding-top: 80px;
+#empty-div-1 {
+  height: 100px;
 }
-
-// Section on the different steps to use our website
-.step-icons {
-  z-index: -1;
-}
-
-.step-icons img {
-  width: 200px;
-}
-
-#step-1-icon {
-  position: absolute;
-  top: 1145px;
-  left: 450px;
-}
-
-#step-2-icon {
-  position: absolute;
-  top: 1305px;
-  right: 450px;
-}
-
-#step-3-icon {
-  position: absolute;
-  top: 1485px;
-  left: 450px;
-}
-
-#step-4-icon {
-  position: absolute;
-  top: 1655px;
-  right: 450px;
-}
-
-#step-5-icon {
-  position: absolute;
-  top: 1835px;
-  left: 450px;
-}
-
-#empty-div-home-page {
-  height: 140px;
-}
-
 
 /////////////////////////////////////////////////////////
 // Logged-in Home Page //
