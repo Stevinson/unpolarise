@@ -8,6 +8,9 @@ class User < ApplicationRecord
   serialize :info, Hash
   serialize :like_data, Hash
 
+  # Boolean to tell if user has just signed in
+  attr_accessor :just_signed_up
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
@@ -30,6 +33,7 @@ class User < ApplicationRecord
       user = User.new(user_params)
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
+      user.just_signed_up = true
     end
 
     return user
