@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :links, dependent: :destroy
+  has_many :bookmarks
+  has_many :articles, through: :bookmarks
 
   # Make fields in DB readable as a hash
   serialize :sources_stats, Hash
