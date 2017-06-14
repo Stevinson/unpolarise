@@ -191,24 +191,6 @@
 
 // Card for the Analytics page
 
-.card-analytics {
-  background-color: $unpolarise-lighter-grey;
-  color: $gray;
-  position: relative;
-  border-radius: 4px;
-  padding: 5px 5px 5px 5px;
-  margin-bottom: 30px;
-}
-
-.card-top-analytics {
-  background-color: $unpolarise-lighter-grey;
-  color: $gray;
-  position: relative;
-  border-radius: 4px;
-  padding: 30px 30px 30px 30px;
-  margin-bottom: 30px;
-}
-
 #card-graph-1 {
   background-color: $unpolarise-lighter-grey;
   color: $gray;
@@ -216,8 +198,7 @@
   border-radius: 4px;
   padding: 5px 5px 5px 5px;
   margin-bottom: 30px;
-  width: 590px;
-  margin-left: -50px;
+  width: 100%;
 }
 
 #card-graph-2 {
@@ -226,8 +207,8 @@
   position: relative;
   border-radius: 4px;
   padding: 5px 5px 5px 5px;
-  margin-bottom: 30px;
-  width: 540px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 #card-graph-3 {
@@ -235,11 +216,25 @@
   color: $gray;
   position: relative;
   border-radius: 4px;
-  padding: 30px 30px 30px 30px;
+  padding: 20px 30px 30px 30px;
   margin-bottom: 50px;
-  width: 540px;
+  width: 100%;
+  height: 210px;
   h4 {
     font-size: 17px;
     font-weight: bolder;
+  }
+  ol {
+    padding-left: 20px;
+  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .button-top-5 {
+    width: 200px;
+  }
+  p {
+    color: $unpolarise-dark-grey;
+    font-size: 15px;
   }
 }

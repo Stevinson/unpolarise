@@ -6,18 +6,19 @@
 
   <%= render 'tabs_analytics', active: :friends_analytics %>
 
+
   <!-- ................... -->
   <!-- Content of the Tabs -->
   <!-- ................... -->
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div id="card-graph-1">
           <!-- Graph that displays the count of how many friends like each particular topic -->
           <% array = [] %>
           <% current_user.like_data.each { |name, d| array << [d["name"], d["friend_likes"]] } %>
-          <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Facebook pages your friends like", xtitle: "Number of likes", width: "580px", height: "600px", max: 65 %>
+          <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Facebook pages your friends like", xtitle: "Number of likes", width: "100%", height: "600px", max: 65 %>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -33,12 +34,13 @@
                 "Center Right" => hash["-0.25"],
                 "Right" => hash["-1"]
               }
-            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "530px", height: "350px", title: "Distribution of the likes on these pages"
+            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of the likes on these pages"
             %>
           </div>
         </div>
         <div class="row">
           <div id="card-graph-3">
+            <div class="top-5">
               <!-- List of the top 5 news sites  -->
               <h4>Top Facebook pages liked by your friends</h4>
               <!-- Get a sorted array of array of hashes with page name and page info -->
@@ -50,6 +52,8 @@
                 <li><%= sorted_pages[3][1]["name"] %> - <%= sorted_pages[3][1]["friend_likes"] %> likes</li>
                 <li><%= sorted_pages[4][1]["name"] %> - <%= sorted_pages[4][1]["friend_likes"] %> likes</li>
               </ol>
+            </div>
+            <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
           </div>
         </div>
       </div>
