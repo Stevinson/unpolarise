@@ -30,10 +30,13 @@ class CategoriseUser
   # Calculate the sources_score as an aggregate of each of a user's news source's scores
   def calculate_sources_score
     score = 0.0
-    num_links = @user.links.all.length
-    # Create a cumulative score for the sources
-    @user.links.all.each { |link| score += link.source.source_score }
-    return score.to_f / num_links
+    if @user.links.count > 0
+      num_links = @user.links.all.length
+      # Create a cumulative score for the sources
+      @user.links.all.each { |link| score += link.source.source_score }
+      score =  score.to_f / num_links
+    end
+    return score
   end
 
   # Calculate an accuracy score. This is just a number in the range {0,1}
