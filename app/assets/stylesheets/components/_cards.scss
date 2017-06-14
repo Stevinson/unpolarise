@@ -238,3 +238,21 @@
     font-size: 15px;
   }
 }
+
+// Cards that hold the messages that say the graphs are empty
+.empty {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card-empty-graph-left {
+  height: 600px;
+}
+.card-empty-graph-top-right {
+  height: 370px;
+}
+.message-empty {
+  // padding: 0 15px;
+  width: 400px;
+  margin: auto;
+}

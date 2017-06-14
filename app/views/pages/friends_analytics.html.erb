@@ -18,7 +18,16 @@
           <!-- Graph that displays the count of how many friends like each particular topic -->
           <% array = [] %>
           <% current_user.like_data.each { |name, d| array << [d["name"], d["friend_likes"]] } %>
-          <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Facebook pages your friends like", xtitle: "Number of likes", width: "100%", height: "600px", max: 65 %>
+          <!-- Show message if no like data yet -->
+          <% if current_user.like_data.empty? %>
+            <div class="card-empty-graph-left empty">
+              <div class="message-empty">
+                <p>No news articles have been spotted on your facebook yet! Carry on using Facebook as usual and before long you will have lots of data!</p>
+              </div>
+            </div>
+          <% else %>
+            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Facebook pages your friends like", xtitle: "Number of likes", width: "100%", height: "600px", max: 65 %>
+          <% end %>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -27,15 +36,24 @@
             <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
             <% hash = Hash.new(0) %>
             <% current_user.like_data.each { |name, d| hash[d["source_score"]] += d["friend_likes"] } %>
-            <%= pie_chart (
-              {
-                "Left" => hash["1"],
-                "Center Left" => hash["0.25"],
-                "Center Right" => hash["-0.25"],
-                "Right" => hash["-1"]
-              }
-            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of the likes on these pages"
-            %>
+            <!-- Show message if no data yet -->
+            <% if current_user.like_data.empty? %>
+              <div class="card-empty-graph-top-right empty text-center">
+                <div class="message-empty">
+                  <p>No news articles have been spotted on your facebook yet! Carry on using Facebook as usual and before long you will have lots of data!</p>
+                </div>
+              </div>
+            <% else %>
+              <%= pie_chart (
+                {
+                  "Left" => hash["1"],
+                  "Center Left" => hash["0.25"],
+                  "Center Right" => hash["-0.25"],
+                  "Right" => hash["-1"]
+                }
+              ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of the likes on these pages"
+              %>
+            <% end %>
           </div>
         </div>
         <div class="row">
@@ -45,13 +63,18 @@
               <h4>Top Facebook pages liked by your friends</h4>
               <!-- Get a sorted array of array of hashes with page name and page info -->
               <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
-              <ol>
-                <% (0..4).each do |i| %>
-                 <% if sorted_pages[i][1]["name"] %>
-                   <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+              <!-- Display message if there is no url data yet -->
+              <% if Link.where(user_id: current_user.id).count == 0 %>
+                <p>(No data yet)</p>
+              <% else %>
+                <ol>
+                  <% (0..4).each do |i| %>
+                   <% if sorted_pages[i][1]["name"] %>
+                     <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+                   <% end %>
                  <% end %>
-               <% end %>
-              </ol>
+                </ol>
+              <% end %>
             </div>
             <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
           </div>

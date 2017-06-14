@@ -18,22 +18,40 @@
           <% array = Link.joins(:source).where(user_id: current_user.id).group(:source_id).count.to_a %>
           <% array.each { |pair| pair[0] = Source.find(pair[0]).name } %>
           <% array = array.sort_by { |pair| pair[1] }.reverse %>
-          <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
+          <!-- Make it so that if there is no data it has a message saying so -->
+          <% if Link.where(user_id: current_user.id).count == 0 %>
+            <div class="card-empty-graph-left empty">
+              <div class="message-empty">
+                <p>No news articles have been spotted on your facebook yet! Carry on using Facebook as usual and before long you will have lots of data!</p>
+              </div>
+            </div>
+          <% else %>
+            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
+          <% end %>
         </div>
       </div>
       <div class="col-lg-6 ">
         <div class="row">
           <div id="card-graph-2">
-            <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
-            <%= pie_chart (
-              {
-                "Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 1.0).count,
-                "Center Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 0.25).count,
-                "Center Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -0.25).count,
-                "Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -1.0).count
-              }
-            ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of these news sources"
-            %>
+            <!-- Display message if there is no url data yet -->
+            <% if Link.where(user_id: current_user.id).count == 0 %>
+              <div class="card-empty-graph-top-right empty text-center">
+                <div class="message-empty">
+                  <p>No news articles have been spotted on your facebook yet! Carry on using Facebook as usual and before long you will have lots of data!</p>
+                </div>
+              </div>
+            <% else %>
+              <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
+              <%= pie_chart (
+                {
+                  "Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 1.0).count,
+                  "Center Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 0.25).count,
+                  "Center Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -0.25).count,
+                  "Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -1.0).count
+                }
+              ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of these news sources"
+              %>
+            <% end %>
           </div>
         </div>
         <div class="row">
@@ -41,14 +59,19 @@
             <div class="top-5">
               <!-- List of the top 5 news sites  -->
               <h4>Top News Sources</h4>
-              <!-- Get a sorted array of arrays with news source name and link count -->
-              <ol>
-                <% (0..4).each do |i| %>
-                  <% if array[i] %>
-                    <li><%= array[i][0] %> - <%= array[i][1] %> links</li>
+              <!-- Display message if there is no url data yet -->
+              <% if Link.where(user_id: current_user.id).count == 0 %>
+                <p>(No data yet)</p>
+              <% else %>
+                <!-- Get a sorted array of arrays with news source name and link count -->
+                <ol>
+                  <% (0..4).each do |i| %>
+                    <% if array[i] %>
+                      <li><%= array[i][0] %> - <%= array[i][1] %> links</li>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </ol>
+                </ol>
+              <% end %>
             </div>
             <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
           </div>
