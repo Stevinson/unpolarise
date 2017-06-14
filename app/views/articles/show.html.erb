@@ -7,7 +7,11 @@
       <div id="article-image" class="banner-unpolarise" style="background-image: url('<%= cl_image_path @article.photo.path %>') ">
       </div>
       <div id="bookmark">
-
+        <% if @current_user.articles.include? @article %>
+          <img src="images/bookmarked" alt="saved">
+        <% else %>
+          <img src="images/bookmark" alt="save!">
+        <% end %>
       </div>
 
     <% end %>
