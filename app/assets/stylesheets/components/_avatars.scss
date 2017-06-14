@@ -34,5 +34,26 @@
   align-items: center;
   p {
     font-size: 22px !important;
+    padding-top: 10px;
   }
+}
+
+.avatar-accuracy-score {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  // background-color: $unpolarise-off-white;
+  background-color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  p {
+    font-size: 22px !important;
+    padding-top: 10px;
+  }
+}
+
+.avatar-70 {
+  width: 70px;
 }
