@@ -47,12 +47,20 @@
                 </div>
               </div>
             </div>
-            <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.
+            <% if current_user.info[:category] %>
+              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.
+            <% else %>
+              <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later.</p>
+            <% end %>
             </p>
           </div>
         </div>
       </div>
     </div>
+
+
+
+
 
     <hr>
 
