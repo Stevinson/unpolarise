@@ -26,7 +26,7 @@
           <div id="card-graph-2">
             <!-- Pie chart showing the amount of topics in each of the four scoring categories (i.e. 'left')  -->
             <% hash = Hash.new(0) %>
-            <% current_user.like_data.each { |name, d| hash[d["source_score"]] += 1 } %>
+            <% current_user.like_data.each { |name, d| hash[d["source_score"]] += d["friend_likes"] } %>
             <%= pie_chart (
               {
                 "Left" => hash["1"],
@@ -46,11 +46,11 @@
               <!-- Get a sorted array of array of hashes with page name and page info -->
               <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
               <ol>
-                <li><%= sorted_pages[0][1]["name"] %> - <%= sorted_pages[0][1]["friend_likes"] %> likes</li>
-                <li><%= sorted_pages[1][1]["name"] %> - <%= sorted_pages[1][1]["friend_likes"] %> likes</li>
-                <li><%= sorted_pages[2][1]["name"] %> - <%= sorted_pages[2][1]["friend_likes"] %> likes</li>
-                <li><%= sorted_pages[3][1]["name"] %> - <%= sorted_pages[3][1]["friend_likes"] %> likes</li>
-                <li><%= sorted_pages[4][1]["name"] %> - <%= sorted_pages[4][1]["friend_likes"] %> likes</li>
+                <% (0..4).each do |i| %>
+ +                <% if sorted_pages[i][1]["name"] %>
+ +                  <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+ +                <% end %>
+ +              <% end %>
               </ol>
             </div>
             <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>

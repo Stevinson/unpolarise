@@ -10,15 +10,14 @@
   <!-- Content of the Tabs -->
   <!-- ................... -->
 
-  <!-- <div id="empty-div-1">
-  </div> -->
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 ">
         <div id="card-graph-1" class="text-center">
           <!-- Graph that displays the count of each particular site-->
-          <% array = Link.where(user: current_user).group(:url).count.to_a %>
+          <% array = Link.joins(:source).where(user_id: current_user.id).group(:source_id).count.to_a %>
+          <% array.each { |pair| pair[0] = Source.find(pair[0]).name } %>
+          <% array = array.sort_by { |pair| pair[1] }.reverse %>
           <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
         </div>
       </div>
@@ -28,10 +27,10 @@
             <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
             <%= pie_chart (
               {
-                "Left" => Source.joins(:links).where(source_score: 1.0).count,
-                "Center Left" => Source.joins(:links).where(source_score: 0.25).count,
-                "Center Right" => Source.joins(:links).where(source_score: -0.25).count,
-                "Right" => Source.joins(:links).where(source_score: -1.0).count
+                "Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 1.0).count,
+                "Center Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 0.25).count,
+                "Center Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -0.25).count,
+                "Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -1.0).count
               }
             ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of these news sources"
             %>
@@ -43,11 +42,10 @@
               <!-- List of the top 5 news sites  -->
               <h4>Top News Sources</h4>
               <!-- Get a sorted array of arrays with news source name and link count -->
-              <% sorted_sources = Source.joins(:links).group(:name).count.to_a.sort { |a,b| a[1] <=> b[1] }.reverse %>
               <ol>
                 <% (0..4).each do |i| %>
-                  <% if sorted_sources[i] %>
-                    <li><%= sorted_sources[i][0] %> - <%= sorted_sources[0][1] %> links</li>
+                  <% if array[i] %>
+                    <li><%= array[i][0] %> - <%= array[0][1] %> links</li>
                   <% end %>
                 <% end %>
               </ol>
