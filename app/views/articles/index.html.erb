@@ -56,10 +56,9 @@
               </div>
             </div>
             <% if current_user.info[:category] %>
-              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.
-              </p>
+              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.</p>
             <% else %>
-              <p>Your newsfeed echo chamber has not been categorised yet.</p>
+              <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later.</p>
             <% end %>
           </div>
         </div>
