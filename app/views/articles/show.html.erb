@@ -4,8 +4,13 @@
   <!-- Article banner image -->
   <div class="body-container">
     <% if @article.photo? %>
-      <div class="banner-unpolarise" style="background-image: url('<%= cl_image_path @article.photo.path %>') "></div>
-          <%# cl_image_tag @article.photo.path, class: "banner-unpolarise", crop: :fill %>
+      <div id="article-image" class="banner-unpolarise" style="background-image: url('<%= cl_image_path @article.photo.path %>') ">
+        <div id="bookmark">
+          <%= render 'bookmarks/bookmark', article: @article, user: current_user %>
+        </div>
+      </div>
+
+
     <% end %>
     <!-- Article information -->
     <div class="container padded-top">
@@ -19,12 +24,12 @@
               <h2><%= @article.title %></h2>
             </div>
           </div>
+
           <div class="row">
             <!-- Date added -->
             <div class="col-xs-10">
               <p>Posted on <%= @article.created_at.to_date.strftime('%b %d, %Y') %></p>
             </div>
-            <!-- Links to edit and delete -->
           </div>
 
           <!-- Summary -->
