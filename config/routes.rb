@@ -19,7 +19,10 @@ Rails.application.routes.draw do
   # get "/suggested_articles", to: "pages#suggested_articles" # We need a distinct path for this one, we're using the articles index in the admin section.
 
   # Article
-  resources :articles, only: [:show] # All the other actions are managed through Rails Admin (index, new, create, update, delete)
+  resources :articles, only: [:show]
+  delete :un_bookmark, to: 'articles#un_bookmark'
+  resources :bookmarks, only: [:create]
+  # All the other actions are managed through Rails Admin (index, new, create, update, delete)
   get 'suggested_articles', to: 'articles#index', as: 'suggested_articles'
 
   #Logged out Home Page

@@ -5,14 +5,11 @@
   <div class="body-container">
     <% if @article.photo? %>
       <div id="article-image" class="banner-unpolarise" style="background-image: url('<%= cl_image_path @article.photo.path %>') ">
+        <div id="bookmark">
+          <%= render 'bookmarks/bookmark', article: @article, user: current_user %>
+        </div>
       </div>
-      <div id="bookmark">
-        <% if @current_user.articles.include? @article %>
-          <img src="images/bookmarked" alt="saved">
-        <% else %>
-          <img src="images/bookmark" alt="save!">
-        <% end %>
-      </div>
+
 
     <% end %>
     <!-- Article information -->

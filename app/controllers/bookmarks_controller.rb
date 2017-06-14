@@ -1,17 +1,9 @@
 class BookmarksController < ApplicationController
   def create
-    @article = Article.find(params[:id])
-    @user = current_user
-    @bookmark = Bookmark.new(user: @user, article: @article)
-    iff @review.save # Valid inputs
-      respond_to do |format| # Get input from html or js
-        format.html { redirect_to article_path(@article) }
-        format.js
-      end
-    else # Invalid inputs
-      respond_to do |format| # Get input from html or js
-        format.html { render "articles/show" }
-        format.js
-      end
+    @bookmark = Bookmark.new(user: current_user, article_id: params[:article_id])
+    @bookmark.save # Valid inputs
+    respond_to do |format|
+      format.js
+    end
   end
 end
