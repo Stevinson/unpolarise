@@ -65,3 +65,15 @@ a.manual-button{
   margin: auto;
 }
 
+// Button Analytics page
+
+.btn-card-unpolarise {
+  background-color: #FF2E12;
+  border: none;
+  color: $unpolarise-off-white;
+  border-radius: 3px;
+  padding: 8px 24px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  // margin-left: 8px;
+}
+
