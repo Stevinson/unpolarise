@@ -15,10 +15,12 @@
     background: transparent;
     border: none;
     padding: 0;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
 .bookmark-item {
   width: 50px;
-
 }
