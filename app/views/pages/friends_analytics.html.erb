@@ -47,10 +47,10 @@
               <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
               <ol>
                 <% (0..4).each do |i| %>
- +                <% if sorted_pages[i][1]["name"] %>
- +                  <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
- +                <% end %>
- +              <% end %>
+                 <% if sorted_pages[i][1]["name"] %>
+                   <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+                 <% end %>
+               <% end %>
               </ol>
             </div>
             <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
