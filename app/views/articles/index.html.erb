@@ -97,7 +97,11 @@
                     </div>
                   </div>
                   <!-- Summary of the article -->
-                  <p><%= article.summary[0..175] %>[...]</p>
+                  <p><%= article.summary[0..175] %>
+                    <% if article.summary[176] %>
+                      ...
+                    <% end %>
+                  </p>
                 </div>
               </div>
             </div>
@@ -123,7 +127,11 @@
                     </div>
                   </div>
                   <!-- Summary of the article -->
-                  <p><%= article.summary[0..175] %>[...]</p>
+                  <p><%= article.summary[0..175] %>
+                    <% if article.summary[176] %>
+                      ...
+                    <% end %>
+                  </p>
                 </div>
               </div>
             </div>
@@ -146,7 +154,11 @@
                       <p><span class="bold">Category:</span><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
-                  <p><%= article.summary[0..283] %>[...]</p>
+                  <p><%= article.summary[0..283] %>
+                    <% if article.summary[284] %>
+                      ...
+                    <% end %>
+                  </p>
                 </div>
               </div>
             <% end %>
