@@ -18,7 +18,7 @@ Source.create!(name: "HuffPost Politics", source_score: left, url_base: "/(\S+)h
 Source.create!(name: "Vice", source_score: left, url_base: "/(\S+)www\.vice\.com(\S+)/")
 Source.create!(name: "Morning Star", source_score: left, url_base: "/(\S+)www\.morningstaronline\.co\.uk(\S+)/")
 # Centre left
-Source.create!(name: "Bloomburg", source_score: c_left, url_base: "/(\S+)bloom\.bg(\S+)/")
+Source.create!(name: "Bloomberg", source_score: c_left, url_base: "/(\S+)bloom\.bg(\S+)/")
 Source.create!(name: "Independent", source_score: c_left, url_base: "/(\S+)www\.independent\.co\.uk(\S+)|(\S+)www\.indy100\.com(\S+)/")
 Source.create!(name: "CNN", source_score: c_left, url_base: "/(\S+)cnn\.it(\S+)/")
 Source.create!(name: "New York Times", source_score: c_left, url_base: "/(\S+)www\.nytimes\.com(\S+)/")
