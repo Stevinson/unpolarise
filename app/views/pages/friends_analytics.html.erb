@@ -69,7 +69,7 @@
               <% else %>
                 <ol>
                   <% (0..4).each do |i| %>
-                   <% if sorted_pages[i][1]["name"] %>
+                   <% if sorted_pages[i] %>
                      <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
                    <% end %>
                  <% end %>
