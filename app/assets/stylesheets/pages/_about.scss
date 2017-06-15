@@ -12,3 +12,9 @@ ul#acknowledgements {
   justify-content: space-around;
   padding-top: 20px;
 }
+
+#acknowledgements a {
+  &:hover {
+    color: $unpolarise-orange-opacity-dark;
+  }
+}
