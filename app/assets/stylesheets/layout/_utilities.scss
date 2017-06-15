@@ -66,6 +66,15 @@ a:active {
   color: $unpolarise-orange;
 }
 
+// Styling on one a tag on the articles index page
+
+#categorisation a {
+  color: $unpolarise-orange;
+  &:hover {
+    color: $unpolarise-orange-opacity-dark;
+  }
+}
+
 // Set a minimum height for each body so that the footer always appears at the base of a page
 // .body-container {
 //   min-height: calc(100vh - #{$navbar-height} - #{$footer-height} );

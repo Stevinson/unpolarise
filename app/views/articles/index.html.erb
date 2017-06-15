@@ -56,7 +56,7 @@
               </div>
             </div>
             <% if current_user.info[:category] %>
-              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.
+              <p class="justify" id="categorisation">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>. <%= link_to("Learn more", how_to_use_path) %>
               </p>
             <% else %>
               <p>Your newsfeed echo chamber has not been categorised yet.</p>
@@ -93,7 +93,7 @@
                   <div class="card-category">
                     <div class="card-category-content">
                       <%= image_tag("#{current_user.info[:category]}.png", class: "avatar-70") %>
-                      <p>Category: <%= article.category %> </p>
+                      <p><strong>Category:</strong><br><%= article.category.capitalize %> </p>
                     </div>
                   </div>
                   <!-- Summary of the article -->
@@ -119,7 +119,7 @@
                   <div class="card-category">
                     <div class="card-category-content">
                       <%= image_tag("#{current_user.info[:category]}.png", class: "avatar-large") %>
-                      <p>Category: <%= article.category %></p>
+                      <p><strong>Category:</strong><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
                   <!-- Summary of the article -->
@@ -143,7 +143,7 @@
                   <div class="card-category">
                     <div class="card-category-content">
                       <%= image_tag("#{current_user.info[:category]}.png", class: "avatar-70") %>
-                      <p>Category: <%= article.category %></p>
+                      <p><strong>Category:</strong><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
                   <p><%= article.summary %></p>
