@@ -86,4 +86,5 @@ class CategoriseUser
       return score / @number_of_likes
     end
     return score
+  end
 end
