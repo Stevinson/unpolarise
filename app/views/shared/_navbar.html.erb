@@ -41,10 +41,10 @@
       <%= link_to "How to Use", how_to_use_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Sign up text link -->
-      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign Up", "#", data: { toggle: "modal", target: "#mySignUpModal" }, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Login text link -->
-      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Login", "#", data: { toggle: "modal", target: "#myLoginModal" }, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -62,10 +62,90 @@
         <% else %>
           <li><%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "How to Use", how_to_use_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Sign Up", "#", data: { toggle: "modal", target: "#mySignUpModal" }, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Login", "#", data: { toggle: "modal", target: "#myLoginModal" }, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <% end %>
       </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="##myLoginModal">
+  Launch demo modal
+</button> -->
+
+<!-- Sign up Modal -->
+<div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-title text-center" id="myModalLabel">Welcome to <%= image_tag "unpolarise.svg", height: 30 %></div>
+      </div>
+      <div class="modal-body card-signup">
+
+      <!-- <div class="card-signup"> -->
+        <div class="card-signup-content">
+          <div class="form-content">
+            <div class="text-center">
+              <p>Our app works in combination with your facebook account to provide insight on the news you receive. As such you must be signed into Facebook to use our tools.</p>
+              <br>
+            </div>
+            <!-- Give the user the option to sign in with Facebook -->
+            <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form" do %>
+              Sign up with Facebook <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+            <% end %>
+            <!-- A nice break between the two options -->
+            <div class="padded-top-bottom text-center padded-top">
+              <p>or</p>
+              <p>Already signed up?</p>
+            </div>
+            <!-- Redirect user to the sign in page (for when they are already a user) -->
+            <div class="form-actions">
+              <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form btn-form-unpolarise" do %>
+                Log in with Facebook <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-title text-center" id="myModalLabel">Welcome back to <%= image_tag "unpolarise.svg", height: 30 %></div>
+      </div>
+      <div class="modal-body card-login">
+
+      <!--   <div class="card-login"> -->
+          <div class="card-login-content">
+            <div class="form-content">
+              <div class= "text-center">
+                <p>Please sign in to see your analysis and discover our suggested articles.</p>
+                <br>
+              </div>
+              <!-- Give the user the option to sign in with Facebook -->
+              <%= link_to omniauth_authorize_path(:user, :facebook), class: "btn-facebook btn-form" do %>
+                Log in with Facebook <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+        <!-- </div> -->
+
+      </div>
+
     </div>
   </div>
 </div>
