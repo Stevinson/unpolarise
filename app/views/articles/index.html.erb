@@ -37,7 +37,9 @@
                 <%#= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
                 <div class="avatar-confidence-score">
                   <% if current_user.info[:confidence] %>
-                    <p> <%= current_user.info[:confidence] %>%</p>
+                    <% confidence = current_user.info[:confidence] * 100 %>
+                    <% confidence = confidence.round(0) %>
+                    <p> <%= confidence %>%</p>
                   <% else %>
                     <p>n/a</p>
                   <% end %>
@@ -48,7 +50,9 @@
                 <%#= image_tag("http://placehold.it/100x100", class: "avatar-xlarge") %>
                 <div class="avatar-accuracy-score">
                 <% if current_user.info[:accuracy] %>
-                  <p> <%= current_user.info[:accuracy] %>%</p>
+                  <% accuracy = current_user.info[:accuracy] * 100 %>
+                  <% accuracy = accuracy.round(0) %>
+                  <p> <%= accuracy %>%</p>
                 <% else %>
                   <p>n/a</p>
                 <% end %>
