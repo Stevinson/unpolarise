@@ -56,7 +56,8 @@
               </div>
             </div>
             <% if current_user.info[:category] %>
-              <p class="justify">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>.</p>
+              <p class="justify" id="categorisation">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>. <%= link_to("Learn more", how_to_use_path) %>
+              </p>
             <% else %>
               <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later.</p>
             <% end %>
@@ -92,7 +93,7 @@
                   <div class="card-category">
                     <div class="card-category-content">
                       <%= image_tag("#{article.category}.png", class: "avatar-70") %>
-                      <p>Category: <%= article.category %> </p>
+                      <p><span class="bold">Category:</span><br><%= article.category.capitalize %> </p>
                     </div>
                   </div>
                   <!-- Summary of the article -->
@@ -118,7 +119,7 @@
                   <div class="card-category">
                     <div class="card-category-content">
                       <%= image_tag("#{article.category}.png", class: "avatar-large") %>
-                      <p>Category: <%= article.category %></p>
+                      <p><span class="bold">Category:</span><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
                   <!-- Summary of the article -->
@@ -142,7 +143,7 @@
                   <div class="card-category">
                     <div class="card-category-content">
                       <%= image_tag("#{article.category}.png", class: "avatar-70") %>
-                      <p>Category: <%= article.category %></p>
+                      <p><span class="bold">Category:</span><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
                   <p><%= article.summary %></p>

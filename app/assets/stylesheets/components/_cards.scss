@@ -22,11 +22,13 @@
   padding-bottom: 50px;
   padding-top: 50px;
 }
+
 .first-card-large {
   display: flex;
   padding-bottom: 50px;
   padding-top: 0px;
 }
+
 .card-large-content {
   display: flex;
   flex-direction: column;
@@ -144,12 +146,17 @@
   border-radius: 4px;
   padding: 20px 20px 20px 20px;
   margin: 20px 0 30px 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card-category-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  p {
+    padding-top: 10px;
+  }
 }
 
 // Card for Login page
@@ -180,9 +187,9 @@
   color: $unpolarise-dark-grey;
   position: relative;
   border-radius: 4px;
-  padding: 60px 60px 20px 60px;
+  padding: 40px 60px 30px 60px;
   margin: 20px 0 30px 0;
-  height: 540px;
+  height: 500px;
 }
 
 .card-signup-content {
