@@ -72,7 +72,7 @@ class CategoriseUser
   # Calculate the likes_score as an aggregate of the user's friends' likes scores
   def calculate_likes_score
     score = 0
-    @number_of_likes = 0
+    @number_of_likes = 0 # Reset
     # Check that the user has like data
     if @user.like_data
       # Accumalate the number in each category to calculate like_score
@@ -83,7 +83,8 @@ class CategoriseUser
         score += (score_num_pair[0].to_f * score_num_pair[1])
         @number_of_likes += score_num_pair[1]
       end
+      return score / @number_of_likes
     end
-    return score / @number_of_likes
+    return score
   end
 end

@@ -17,6 +17,15 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def un_bookmark
+    set_article
+    bookmark = Bookmark.find_by(article: @article, user: current_user)
+    bookmark.destroy
+    respond_to do |format|
+      format.js {render 'un_bookmark', locals: {article: @article}}
+    end
+  end
+
   private
 
   # Find the article by its ID

@@ -59,7 +59,7 @@
               <p class="justify" id="categorisation">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>. <%= link_to("Learn more", how_to_use_path) %>
               </p>
             <% else %>
-              <p>Your newsfeed echo chamber has not been categorised yet.</p>
+              <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later.</p>
             <% end %>
           </div>
         </div>
@@ -92,8 +92,8 @@
                   <!-- Meta data -->
                   <div class="card-category">
                     <div class="card-category-content">
-                      <%= image_tag("#{current_user.info[:category]}.png", class: "avatar-70") %>
-                      <p><strong>Category:</strong><br><%= article.category.capitalize %> </p>
+                      <%= image_tag("#{article.category}.png", class: "avatar-70") %>
+                      <p><span class="bold">Category:</span><br><%= article.category.capitalize %> </p>
                     </div>
                   </div>
                   <!-- Summary of the article -->
@@ -118,8 +118,8 @@
                   <!-- Meta data -->
                   <div class="card-category">
                     <div class="card-category-content">
-                      <%= image_tag("#{current_user.info[:category]}.png", class: "avatar-large") %>
-                      <p><strong>Category:</strong><br><%= article.category.capitalize %></p>
+                      <%= image_tag("#{article.category}.png", class: "avatar-large") %>
+                      <p><span class="bold">Category:</span><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
                   <!-- Summary of the article -->
@@ -142,8 +142,8 @@
                   <!-- Meta data -->
                   <div class="card-category">
                     <div class="card-category-content">
-                      <%= image_tag("#{current_user.info[:category]}.png", class: "avatar-70") %>
-                      <p><strong>Category:</strong><br><%= article.category.capitalize %></p>
+                      <%= image_tag("#{article.category}.png", class: "avatar-70") %>
+                      <p><span class="bold">Category:</span><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
                   <p><%= article.summary %></p>

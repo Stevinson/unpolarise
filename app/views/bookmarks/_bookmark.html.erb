@@ -1,0 +1,22 @@
+<% if user.articles.include? article %>
+
+  <!-- Removes from bookmarks on click if already bookmarked -->
+
+  <%= link_to un_bookmark_path(id: article.id), method: :delete, remote: true do %>
+    <%= image_tag "bookmark-orange.svg", class: "bookmark-item" %>
+  <% end %>
+
+<% else %>
+
+  <!-- Adds article to bookmarks -->
+
+  <%= form_tag("/bookmarks", method: 'post', remote: true ) do %>
+    <%= hidden_field_tag 'article_id', article.id %>
+    <%= button_tag(type: 'submit') do %>
+      <%= image_tag "bookmark-grey.svg", class: "bookmark-item" %>
+    <% end %>
+  <% end %>
+
+
+<% end %>
+
