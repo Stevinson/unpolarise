@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   # All the other actions are managed through Rails Admin (index, new, create, update, delete)
   get 'suggested_articles', to: 'articles#index', as: 'suggested_articles'
 
+  # Profile page (bookmarked articles)
+  get 'profile', to: 'pages#profile', as: 'profile'
+
   #Logged out Home Page
   root to: 'pages#home'
 
