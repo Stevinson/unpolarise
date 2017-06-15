@@ -63,7 +63,7 @@
               <p class="justify" id="categorisation">The aggregate of your newsfeed news sources has been categorised as "<%= current_user.info[:category] %>". <%= @types[current_user.info[:category].to_sym] %>. <%= link_to("Learn more", how_to_use_path(anchor: "about-recommended-articles")) %>
               </p>
             <% else %>
-              <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later. <%= link_to("Learn more", how_to_use_path(anchor: "about-recommended-articles")) %></p>
+              <p class="justify">The data from your newsfeed has not yet been calculated. Please check back later.</p>
             <% end %>
           </div>
         </div>
