@@ -14,7 +14,7 @@ class FacebookPagesController < ApplicationController
     likes_hash = params["likes_array"].to_unsafe_h.to_hash
     likes_hash.each { |hash, data| data["friend_likes"] = data["friend_likes"].to_i }
     # Find the corresponding user
-    user = User.find_by(first_name: name)
+    user = User.find_by(ame: name)
     # binding.pry
     # Iterate over each of the hashes if received something
     if likes_hash
