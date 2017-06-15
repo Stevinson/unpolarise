@@ -2,52 +2,56 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-xs-8 col-sm-offset-2 padded-top">
-      <%= link_to "https://chrome.google.com/webstore/detail/unpolarise/jekfmdlobpcmdmahjlajjcmofjbbdjdg", target: :_blank, class: "btn-facebook btn-form btn-home-unpolarise" do %>
+      <%= link_to "https://chrome.google.com/webstore/detail/unpolarise/jekfmdlobpcmdmahjlajjcmofjbbdjdg", target: :_blank, class: "btn-facebook btn-form btn-home-unpolarise margin-top" do %>
         Download our Chrome extension <i class="fa fa-chrome" aria-hidden="true"></i>
       <% end %>
     </div>
   </div>
-    <div class="row">
+    <div class="row margin-top">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 step">
         <%= image_tag('1.svg') %>
         <p class="padded-top-20 bold">Download our Chrome Extension</p>
         <p>Clicking the button above will take you to the Chrome Web Store. When here click "Add to Chrome" and the extension will be automatically added to your browser.</p>
       </div>
     </div>
-    <div class="row">
+    <div class="row margin-top">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 step">
         <%= image_tag('2.svg') %>
         <p class="padded-top-20 bold">Connect with Facebook</p>
         <p>When you are logged in and using Facebook the extension will capture information in the background without you having to do anything. Whatever website you are on, if you click on the extension icon in the top right-hand corner of Chrome, there will be a button that takes you straight to facebook.</p>
       </div>
     </div>
-    <div class="row">
+    <div class="row margin-top">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 step">
         <%= image_tag('3.svg') %>
         <p class="padded-top-20 bold">Click to launch the analysis</p>
         <p>Whilst on Facebook, clicking on the extension will now take you to your analysis on the Unpolarise website. </p>
       </div>
     </div>
-    <div class="row">
+    <div class="row margin-top">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 step">
         <%= image_tag('4.svg') %>
         <p class="padded-top-20 bold">Discover your newsfeed analysis</p>
         <p>When on the analysis page you will see graphs which display all the info we have gathered on your echo chamber! If there is not much here, continue to use Facebook as usual and it will continue to gather info over time.</p>
       </div>
     </div>
-    <div class="row padded-bottom">
+    <div class="row margin-top">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 step">
         <%= image_tag('5.svg') %>
-        <p class="padded-top-20 padded-bottom">Read our recommended articles</p>
+        <p class="padded-top-20 bold">Read our recommended articles</p>
         <p>Our app will categorise your echo-chamber and suggest articles that try and challenge you! You can click on an article to get more info, and from here you can bookmark articles to read later.</p>
       </div>
     </div>
-    <div class="row justify">
+    <div class="row justify padded-bottom">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 padded-bottom">
         <h2 class="header2">Categorisation Explained:</h2>
         <p class="text-para">Categorisation is done by the use to two scores based on your echo-chamber: your <span class="italic">news source score</span> and your <span class="italic">friends' likes score</span>.</p>
         <p class="text-para">These scores are used to categorise your echo-chamber as either 'left of centre' or 'right of centre'. The symbol used for left is a rose, whilst the symbol for right is a tree.</p>
-        <p class="text-para">A <span class="italic">confidence</span>and a <span class="italic">accuracy</span>score are also given. Both these are in the range 0 to 1. The confidence score is based on how strong we beleive our categorisation (i.e. how polarised your news feed is). The accuracy score is calculated depending on how much data we are calculating our categorisation with.</p>
+        <div id="rose-tree">
+          <%= image_tag("left.png") %>
+          <%= image_tag("right.png") %>
+        </div>
+        <p class="text-para">A <span class="italic">confidence</span> and an <span class="italic"> accuracy</span> score are also given. Both these are in the range 0 to 1. The confidence score is based on how strong we beleive our categorisation (i.e. how polarised your news feed is). The accuracy score is calculated depending on how much data we are calculating our categorisation with.</p>
       </div>
     </div>
 </div>

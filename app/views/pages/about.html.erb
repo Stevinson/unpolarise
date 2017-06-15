@@ -16,18 +16,41 @@
       </p>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">
+      <h2 class="header">Team:</h2>
+      <div class="text-center">
+        <%= image_tag("team.jpg", class: "width-500") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">
+        <div class="team">
+          <div id="sandrine">
+            <p>Sandrine A.</p>
+          </div>
+          <div id="edward">
+            <p>Edward S.</p>
+          </div>
+          <div id="amal">
+            <p>Amal K.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row padded-bottom">
     <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">
       <h2 class="header">Acknowledgements:</h2>
-      <ul>
+      <ul id="acknowledgements">
         <li>
-          <p class="padded-text txt-para">The Ecochamber Club provided plenty of inspiration - you can find them <a href="https://echochamber.club/" class="unpolarise-orange">here.</a></p>
+          <p class="padded-text txt-para">The Ecochamber Club provided plenty of inspiration - you can find them <a href="https://echochamber.club/" class="unpolarise-orange">here</a> <i class="fa fa-wifi" aria-hidden="true"></i></p>
         </li>
         <li>
-          <p class="padded-text txt-para">Facebook</p>
+          <p class="padded-text txt-para">Facebook <i class="fa fa-facebook-official" aria-hidden="true"></i></p>
         </li>
         <li>
-          <p class="padded-text txt-para">Le Wagon</p>
+          <p class="padded-text txt-para">Le Wagon &hearts; - A 9-week <%= link_to("coding bootcamp", 'https://www.lewagon.com/london', class: "unpolarise-orange") %> during which this project was developed.</p>
         </li>
       </ul>
     </div>

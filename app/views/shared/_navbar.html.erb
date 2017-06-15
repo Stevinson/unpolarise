@@ -27,7 +27,7 @@
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/50x50" %>
           <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
-            <li><%= link_to "Profile", profile_path %></li>
+            <li><%= link_to "Bookmarks", profile_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>

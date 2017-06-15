@@ -8,7 +8,12 @@
   </div>
 
   <div class="row">
-    <% if current_user.bookmarks %>
+    <% if current_user.bookmarks == [] %>
+      <div class="col-xs-12 text-center">
+        <p>You haven't bookmarked any articles yet!</p><br>
+        <p>If you wish to save an article, please click on<%= image_tag("bookmark-grey.svg", class: "img-width-20") %>at the top right corner of the article image.</p>
+      </div>
+    <% else %>
       <% current_user.articles.reverse.each_with_index do |article, index| %>
         <!-- Added a security so that if there is an article doesn't have a photo in the DB it doesn't break the website (and places a fixed image) -->
         <% if article.photo %>
