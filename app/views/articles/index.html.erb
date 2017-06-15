@@ -97,7 +97,7 @@
                     </div>
                   </div>
                   <!-- Summary of the article -->
-                  <p><%= article.summary %></p>
+                  <p><%= article.summary[0..175] %>[...]</p>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@
                     </div>
                   </div>
                   <!-- Summary of the article -->
-                  <p><%= article.summary %></p>
+                  <p><%= article.summary[0..175] %>[...]</p>
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@
                       <p><span class="bold">Category:</span><br><%= article.category.capitalize %></p>
                     </div>
                   </div>
-                  <p><%= article.summary %></p>
+                  <p><%= article.summary[0..283] %>[...]</p>
                 </div>
               </div>
             <% end %>
