@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
     @articles = Article.where("active = ? AND category = ?", true, display_class)
     # Descriptions of each of the types
     @types = { right: "This is because most of the sources of the news have, on aggregate, come from more conservative sources", left: "This is because most of the sources of the news have, on aggregate, come from more liberal sources" }
+    CategoriseUser.new(current_user).perform
   end
 
   def show
