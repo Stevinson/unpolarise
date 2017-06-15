@@ -64,7 +64,7 @@
               <!-- Get a sorted array of array of hashes with page name and page info -->
               <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
               <!-- Display message if there is no url data yet -->
-              <% if Link.where(user_id: current_user.id).count == 0 %>
+              <% if current_user.like_data.empty? %>
                 <p>(No data yet)</p>
               <% else %>
                 <ol>
