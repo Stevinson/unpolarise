@@ -26,7 +26,7 @@
               </div>
             </div>
           <% else %>
-            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Facebook pages your friends like", xtitle: "Number of likes", width: "100%", height: "600px", max: 65 %>
+            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse[0..16], colors: ["#FF4F38", "#999"], title: "Facebook pages your friends like", xtitle: "Number of likes", width: "100%", height: "600px", max: 65 %>
           <% end %>
         </div>
       </div>

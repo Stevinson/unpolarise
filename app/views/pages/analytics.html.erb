@@ -26,7 +26,7 @@
               </div>
             </div>
           <% else %>
-            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
+            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse[0..16], colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
           <% end %>
         </div>
       </div>
