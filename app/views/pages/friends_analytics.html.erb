@@ -26,7 +26,7 @@
               </div>
             </div>
           <% else %>
-            <h4 text-center>Facebook pages your friends like</h4>
+            <h4>Facebook pages your friends like</h4>
             <%= bar_chart array.sort_by { |pair| pair[1] }.reverse, colors: ["#FF4F38", "#999"], xtitle: "Number of likes", width: "100%", height: "600px", max: 65 %>
           <% end %>
         </div>
@@ -45,7 +45,7 @@
                 </div>
               </div>
             <% else %>
-            <h4 text-center>Distribution of the likes on these pages</h4>
+            <h4>Distribution of the likes on these pages</h4>
               <%= pie_chart (
                 {
                   "Left" => hash["1"],
