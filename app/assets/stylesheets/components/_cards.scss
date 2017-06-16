@@ -211,6 +211,16 @@
   padding: 5px 5px 5px 5px;
   margin-bottom: 30px;
   width: 100%;
+  h4 {
+    font-size: 17px;
+    font-weight: bolder;
+    padding-left: 50px;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 #card-graph-2 {
@@ -221,6 +231,16 @@
   padding: 5px 5px 5px 5px;
   margin-bottom: 20px;
   width: 100%;
+  h4 {
+    font-size: 17px;
+    font-weight: bolder;
+    padding-left: 50px;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
 }
 
 #card-graph-3 {
@@ -248,6 +268,9 @@
   p {
     color: $unpolarise-dark-grey;
     font-size: 15px;
+  }
+  .top-5 {
+    display: block;
   }
 }
 

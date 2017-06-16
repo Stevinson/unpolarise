@@ -13,7 +13,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 ">
-        <div id="card-graph-1" class="text-center">
+        <div id="card-graph-1">
           <!-- Graph that displays the count of each particular site-->
           <% array = Link.joins(:source).where(user_id: current_user.id).group(:source_id).count.to_a %>
           <% array.each { |pair| pair[0] = Source.find(pair[0]).name } %>
@@ -26,7 +26,8 @@
               </div>
             </div>
           <% else %>
-            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse[0..16], colors: ["#FF4F38", "#999"], title: "Top news sources on your Facebook feed", xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
+            <h4>Top news sources on your Facebook feed</h4>
+            <%= bar_chart array.sort_by { |pair| pair[1] }.reverse[0..16], colors: ["#FF4F38", "#999"], xtitle: "Number of links from a given source on your feed", width: "100%", height: "600px" %>
           <% end %>
         </div>
       </div>
@@ -42,6 +43,7 @@
               </div>
             <% else %>
               <!-- Pie chart showing the amount of links in each of the four scoring categories (i.e. 'left')  -->
+              <h4>Distribution of these news sources</h4>
               <%= pie_chart (
                 {
                   "Left" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, 1.0).count,
@@ -49,8 +51,7 @@
                   "Center Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -0.25).count,
                   "Right" => Link.joins(:source).where("user_id = ? AND source_score = ?", current_user.id, -1.0).count
                 }
-              ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px", title: "Distribution of these news sources"
-              %>
+              ), donut: true, colors: ["#FF2E12", "#FF4F38", "#FF9486", "#FFC4BC"], width: "100%", height: "370px" %>
             <% end %>
           </div>
         </div>
