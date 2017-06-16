@@ -66,7 +66,7 @@ class CategoriseUser
     distance = Math.sqrt(distance_sqr)
     # A constant distance away from the decision boundary s.t. confidence is 100%
     constant = Math.sqrt(2) / 2
-    return distance / constant
+    return [(distance / constant), 1].min
   end
 
   # Calculate the likes_score as an aggregate of the user's friends' likes scores
