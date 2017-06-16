@@ -64,6 +64,13 @@ a:hover {
 // Make all active button (the moment after clicking before anything happens) the correct colour
 a:active {
   color: $unpolarise-orange;
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
 }
 
 // Styling on one a tag on the articles index page
