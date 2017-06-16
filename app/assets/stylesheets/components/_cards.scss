@@ -259,11 +259,9 @@
   .top-5-wrapper {
     padding-right: 0px;
   }
-
   .top-5 {
     padding-left: 30px;
   }
-
   h4 {
     font-size: 17px;
     font-weight: bolder;
@@ -275,18 +273,16 @@
   ol {
     padding-left: 20px;
   }
+  p {
+    color: $unpolarise-dark-grey;
+    font-size: 15px;
+  }
 
   .button-top-5 {
     width: 200px;
     margin: auto;
     float: right;
     padding-right: 45px;
-
-  }
-
-  p {
-    color: $unpolarise-dark-grey;
-    font-size: 15px;
   }
 }
 
