@@ -59,70 +59,75 @@
     <%= image_tag('home-steps.svg') %>
   </div>
 
-  <div id="empty-div-1">
-  </div>
-
 <% else %>
 
   <!-- ................... -->
   <!-- Logged In Home Page -->
   <!-- ................... -->
+  <div class="body-container">
 
-  <!-- Banner -->
-  <div class="container home-page-banner-margin">
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
-        <div class="banner-logged-in">
-          <div class="banner-content text-center">
-            <h2 class="logged-in-home-page">Click on the button</h2>
-            <h3 class="logged-in-home-page">to launch your newsfeed analysis</h3>
-            <p><br></p>
-            <%= link_to analytics_path, class: "manual-button" do %>
-              <div class="manual-button-space"></div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- <div data-0="transform:translate(0px,0px);" data-500="transform:translate(1000px,1000px);"><i class="fa fa-circle fa-2x" aria-hidden="true"></i></div> -->
-
-  <!-- Explaining how it works -->
-
-  <div id="backshape">
-    <div class="wrapper-light-grey">
-      <div class="container">
-        <div class="row">
-          <div class="text-center">
-            <h2>How does it all work? <i class="fa fa-cog fa-spin fa-fw"></i></h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="inner-working">
-              <h2>Step 1</h2>
-              <h3 id="how-it-works">Facebook Newsfeed Data Parsing</h3>
-              <p id="how-it-works">Our Chrome Extension keeps track of all the news links (and only the news links!) from your Facebook newsfeed and the amount of friends (anonymously) who like certain political Facebook pages.</p>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="inner-working">
-              <h2>Step 2</h2>
-              <h3 id="how-it-works">Data Categorising and Analysis</h3>
-              <p id="how-it-works">Once we have the news links from your Facebook, we analyse their source and categorise them. We render our analysis on your Analytics page.</p>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="inner-working">
-              <h2>Step 3</h2>
-              <h3 id="how-it-works">Suggestions based on Categorising</h3>
-              <p id="how-it-works">Based on the the news you receive and the pages your friends like, we chategorise the echo chamber you are in. We do this so we can suggest articles that oppose this categorisation, to expose you to different viewpoints.</p>
+    <!-- Banner -->
+    <div class="container home-page-banner-margin">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="banner-logged-in">
+            <div class="banner-content text-center">
+              <h2 class="logged-in-home-page">Click on the button</h2>
+              <h3 class="logged-in-home-page">to launch your newsfeed analysis</h3>
+              <p><br></p>
+              <%= link_to analytics_path, class: "manual-button" do %>
+                <div class="manual-button-space"></div>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- <div data-0="transform:translate(0px,0px);" data-500="transform:translate(1000px,1000px);"><i class="fa fa-circle fa-2x" aria-hidden="true"></i></div> -->
+
+    <!-- Explaining how it works -->
+
+    <div id="backshape">
+      <div class="wrapper-light-grey">
+        <div class="container">
+          <div class="row">
+            <div class="text-center">
+              <h2>How does it all work? <i class="fa fa-cog fa-spin fa-fw"></i></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="inner-working">
+                <h2>Step 1</h2>
+                <h3 id="how-it-works">Facebook Newsfeed Data Parsing</h3>
+                <p id="how-it-works">Our Chrome Extension keeps track of all the news links (and only the news links!) from your Facebook newsfeed and the amount of friends (anonymously) who like certain political Facebook pages.</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="inner-working">
+                <h2>Step 2</h2>
+                <h3 id="how-it-works">Data Categorising and Analysis</h3>
+                <p id="how-it-works">Once we have the news links from your Facebook, we analyse their source and categorise them. We render our analysis on your Analytics page.</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="inner-working">
+                <h2>Step 3</h2>
+                <h3 id="how-it-works">Suggestions based on Categorising</h3>
+                <p id="how-it-works">Based on the the news you receive and the pages your friends like, we chategorise the echo chamber you are in. We do this so we can suggest articles that oppose this categorisation, to expose you to different viewpoints.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="invisible">
+      ...
+    </div>
+
   </div>
 
 <% end %>

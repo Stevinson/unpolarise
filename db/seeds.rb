@@ -1,7 +1,7 @@
 # Seed the different news sources
 # First empty DB
 # Link.destroy_all # To make sure we can drop the sources seed as well.
-Source.destroy_all
+# Source.destroy_all
 # # Constants for each category of source
 left = 1.0
 c_left = 0.25
@@ -18,7 +18,7 @@ Source.create!(name: "HuffPost Politics", source_score: left, url_base: "/(\S+)h
 Source.create!(name: "Vice", source_score: left, url_base: "/(\S+)www\.vice\.com(\S+)/")
 Source.create!(name: "Morning Star", source_score: left, url_base: "/(\S+)www\.morningstaronline\.co\.uk(\S+)/")
 # Centre left
-Source.create!(name: "Bloomburg", source_score: c_left, url_base: "/(\S+)bloom\.bg(\S+)/")
+Source.create!(name: "Bloomberg", source_score: c_left, url_base: "/(\S+)bloom\.bg(\S+)/")
 Source.create!(name: "Independent", source_score: c_left, url_base: "/(\S+)www\.independent\.co\.uk(\S+)|(\S+)www\.indy100\.com(\S+)/")
 Source.create!(name: "CNN", source_score: c_left, url_base: "/(\S+)cnn\.it(\S+)/")
 Source.create!(name: "New York Times", source_score: c_left, url_base: "/(\S+)www\.nytimes\.com(\S+)/")
@@ -39,21 +39,21 @@ Source.create!(name: "Daily Star", source_score: right, url_base: "/(\S+)www\.da
 # Left
 # Source.create!(name: "Liberation", source_score: left, url_base: "//")
 # Source.create!(name: "L'Opinion", source_score: left, url_base: "//")
-Source.create!(name: "Le Nouvel Obs", source_score: left, url_base: "/nouvelobs\.com/")
-Source.create!(name: "Marianne", source_score: left, url_base: "/www\.marianne\.net/")
-Source.create!(name: "Charlie Hebdo", source_score: left, url_base: "/charliehebdo\.fr/")
-Source.create!(name: "Alter Eco", source_score: left, url_base: "/alternatives-economiques\.fr/")
-# Centre left
-Source.create!(name: "Le Monde", source_score: c_left, url_base: "/www\.lemonde\.fr/")
-Source.create!(name: "Courrier International", source_score: c_left, url_base: "/courrierinternational\.com/")
-# Centre right
-# Source.create!(name: "Les Echos", source_score: c_right, url_base: "//")
-Source.create!(name: "L'Express", source_score: c_right, url_base: "/lexpress\.fr/")
-# Right
-Source.create!(name: "Le Figaro", source_score: right, url_base: "/lefigaro\.fr/")
-Source.create!(name: "Le Point", source_score: right, url_base: "/lepoint\.fr/")
-Source.create!(name: "Le JDD", source_score: right, url_base: "/lejdd\.fr/")
-Source.create!(name: "Valeurs Actuelles", source_score: right, url_base: "/valeursactuelles\.com/")
+# Source.create!(name: "Le Nouvel Obs", source_score: left, url_base: "/nouvelobs\.com/")
+# Source.create!(name: "Marianne", source_score: left, url_base: "/www\.marianne\.net/")
+# Source.create!(name: "Charlie Hebdo", source_score: left, url_base: "/charliehebdo\.fr/")
+# Source.create!(name: "Alter Eco", source_score: left, url_base: "/alternatives-economiques\.fr/")
+# # Centre left
+# Source.create!(name: "Le Monde", source_score: c_left, url_base: "/www\.lemonde\.fr/")
+# Source.create!(name: "Courrier International", source_score: c_left, url_base: "/courrierinternational\.com/")
+# # Centre right
+# # Source.create!(name: "Les Echos", source_score: c_right, url_base: "//")
+# Source.create!(name: "L'Express", source_score: c_right, url_base: "/lexpress\.fr/")
+# # Right
+# Source.create!(name: "Le Figaro", source_score: right, url_base: "/lefigaro\.fr/")
+# Source.create!(name: "Le Point", source_score: right, url_base: "/lepoint\.fr/")
+# Source.create!(name: "Le JDD", source_score: right, url_base: "/lejdd\.fr/")
+# Source.create!(name: "Valeurs Actuelles", source_score: right, url_base: "/valeursactuelles\.com/")
 
 
 # Create the DB entries of news sources

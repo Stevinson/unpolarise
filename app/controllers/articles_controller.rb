@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   # The index is suggested articles, i.e. it only displays the active and correct
   # articles for the user's type
   def index
+    CategoriseUser.new(current_user).perform
     # Mapping from a user to the articles we want to show them
     switch = { left: "right", right: "left" }
     # Get the mapped category (if the current_user has associated info)

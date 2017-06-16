@@ -66,7 +66,7 @@ class CategoriseUser
     distance = Math.sqrt(distance_sqr)
     # A constant distance away from the decision boundary s.t. confidence is 100%
     constant = Math.sqrt(2) / 2
-    return distance / constant
+    return [(distance / constant), 1].min
   end
 
   # Calculate the likes_score as an aggregate of the user's friends' likes scores
@@ -74,7 +74,7 @@ class CategoriseUser
     score = 0
     @number_of_likes = 0 # Reset
     # Check that the user has like data
-    if @user.like_data
+    if !@user.like_data.empty?
       # Accumalate the number in each category to calculate like_score
       likes_hash = Hash.new(0)
       @user.like_data.each { |name, d| likes_hash[d["source_score"]] += d["friend_likes"] }
