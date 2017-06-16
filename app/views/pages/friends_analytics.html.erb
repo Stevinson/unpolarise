@@ -59,25 +59,28 @@
         </div>
         <div class="row">
           <div id="card-graph-3">
-            <div class="top-5">
-              <!-- List of the top 5 news sites  -->
-              <h4>Top Facebook pages liked by your friends</h4>
-              <!-- Get a sorted array of array of hashes with page name and page info -->
-              <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
-              <!-- Display message if there is no url data yet -->
-              <% if current_user.like_data.empty? %>
-                <p>(No data yet)</p>
-              <% else %>
-                <ol>
-                  <% (0..4).each do |i| %>
-                   <% if sorted_pages[i][1]["name"] %>
-                     <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+              <div class="top-5">
+                <!-- List of the top 5 news sites  -->
+                <h4>Top Facebook pages liked by your friends</h4>
+                <!-- Get a sorted array of array of hashes with page name and page info -->
+                <% sorted_pages = current_user.like_data.sort_by { |name, d| d["friend_likes"]}.reverse %>
+                <!-- Display message if there is no url data yet -->
+                <% if current_user.like_data.empty? %>
+                  <p>(No data yet)</p>
+                <% else %>
+                  <ol>
+                    <% (0..4).each do |i| %>
+                     <% if sorted_pages[i][1]["name"] %>
+                       <li><%= sorted_pages[i][1]["name"] %> - <%= sorted_pages[i][1]["friend_likes"] %></li>
+                     <% end %>
                    <% end %>
-                 <% end %>
-                </ol>
-              <% end %>
+                  </ol>
+                <% end %>
+              </div>
+
+              <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
+
             </div>
-            <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
           </div>
         </div>
       </div>

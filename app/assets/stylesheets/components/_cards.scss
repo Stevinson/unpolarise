@@ -215,6 +215,11 @@
     font-size: 17px;
     font-weight: bolder;
     padding-left: 50px;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -230,6 +235,11 @@
     font-size: 17px;
     font-weight: bolder;
     padding-left: 50px;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 11px;
+    padding-bottom: 11px;
   }
 }
 
@@ -258,6 +268,9 @@
   p {
     color: $unpolarise-dark-grey;
     font-size: 15px;
+  }
+  .top-5 {
+    display: block;
   }
 }
 
