@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   # The links and pages controllers need to have an action that receives the post requests from the extension
   resources :links, only: [:create]
-  #resources :facebook_pages, only: [:create]
+  resources :facebook_pages, only: [:create]
 
   # Facilitates the use of Attachinary
   mount Attachinary::Engine => "/attachinary"
