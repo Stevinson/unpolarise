@@ -57,8 +57,11 @@
             <% end %>
           </div>
         </div>
-        <div class="row">
-          <div id="card-graph-3">
+        <div class="row" id="card-graph-3">
+          <!-- <div id="card-graph-3"> -->
+
+          <div class="col-xs-7 top-5-wrapper">
+
               <div class="top-5">
                 <!-- List of the top 5 news sites  -->
                 <h4>Top Facebook pages liked by your friends</h4>
@@ -78,9 +81,15 @@
                 <% end %>
               </div>
 
+            </div>
+
+            <div class="col-xs-5 top-5-btn-wrapper">
+
               <%= link_to("Go to Suggested Articles", suggested_articles_path, class: "btn-card-unpolarise") %>
 
             </div>
+
+            <!-- </div> -->
           </div>
         </div>
       </div>
