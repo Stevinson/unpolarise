@@ -19,13 +19,6 @@ $header-font: "Raleway", "Helvetica", "sans-serif";
 // Font-size and line-height
 $base-size: 16px;
 $base-height: 1.4;
-// Font-size and line-height
-$base-size:          16px;
-$base-height:        1.4;
-$font-weight-light:  100;
-$font-weight-normal: 300;
-$font-weight-semi-bold: 500;
-$font-weight-bold:   900;
 
 /* -------------------------------------
  * Colors
@@ -39,77 +32,3 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
-
-$unpolarise-off-white: #fbfbf9;
-$unpolarise-dark-grey: #767676;
-$unpolarise-light-grey: rgba(0, 0, 0, 0.15);
-$unpolarise-lighter-grey: rgba(0, 0, 0, 0.05);
-$unpolarise-orange: #FF4F38;
-$unpolarise-orange-opacity-lightest: rgba(255, 79, 56, 0.1);
-$unpolarise-orange-opacity-light: rgba(255, 79, 56, 0.3);
-$unpolarise-orange-opacity-four: rgba(255, 79, 56, 0.4);
-$unpolarise-orange-opacity-medium: rgba(255, 79, 56, 0.6);
-$unpolarise-orange-opacity-dark: rgba(255, 79, 56, 0.8);
-
-/* -------------------------------------
- * Navbar and Footer height
- * ------------------------------------- */
-
-$navbar-height: 70px;
-$footer-height: 85px;
-
-/* -------------------------------------
- * Local Fonts
- * ------------------------------------- */
-
-// Local fonts (uncomment following lines)
-@font-face {
-  font-family: "Avenir";
-  src: font-url('Avenir/AvenirLight.eot');
-  src: font-url('Avenir/AvenirLight.eot?#iefix') format('embedded-opentype'),
-       font-url('Avenir/AvenirLight.woff') format('woff'),
-       font-url('Avenir/AvenirLight.woff2') format('woff2'),
-       font-url('Avenir/AvenirLight.ttf') format('truetype');
-  font-weight: $font-weight-light;
-}
-@font-face {
-  font-family: "Avenir";
-  src: font-url('Avenir/AvenirMedium.eot');
-  src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
-       font-url('Avenir/AvenirMedium.woff') format('woff'),
-       font-url('Avenir/AvenirMedium.woff2') format('woff2'),
-       font-url('Avenir/AvenirMedium.ttf') format('truetype');
-  font-weight: $font-weight-normal;
-}
-// @font-face {
-//   font-family: "Avenir";
-//   src: font-url('Avenir/AvenirSemiBold.eot');
-//   src: font-url('Avenir/AvenirSemiBold.eot?#iefix') format('embedded-opentype'),
-//        font-url('Avenir/AvenirSemiBold.woff') format('woff'),
-//        font-url('Avenir/AvenirSemiBold.woff2') format('woff2'),
-//        font-url('Avenir/AvenirSemiBold.ttf') format('truetype');
-//   font-weight: $font-weight-semi-bold;
-// }
-@font-face {
-  font-family: "Avenir";
-  src: font-url('Avenir/AvenirBold.eot');
-  src: font-url('Avenir/AvenirBold.eot?#iefix') format('embedded-opentype'),
-       font-url('Avenir/AvenirBold.woff') format('woff'),
-       font-url('Avenir/AvenirBold.woff2') format('woff2'),
-       font-url('Avenir/AvenirBold.ttf') format('truetype');
-  font-weight:  $font-weight-bold;
-}
-@font-face {
-  font-family: "Avenir";
-  src: font-url('Avenir/AvenirMediumItalic.eot');
-  src: font-url('Avenir/AvenirMediumItalic.eot?#iefix') format('embedded-opentype'),
-       font-url('Avenir/AvenirMediumItalic.woff') format('woff'),
-       font-url('Avenir/AvenirMediumItalic.woff2') format('woff2'),
-       font-url('Avenir/AvenirMediumItalic.ttf') format('truetype');
-  font-style: italic;
-}
-
-// Fonts family
-$base-font: "Avenir", "Helvetica", "sans-serif";
-$header-font: $base-font;
-$navbar-font: $base-font;
