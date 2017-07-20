@@ -1,0 +1,305 @@
+////  CSS for the smaller cards  ////
+.card-small {
+  padding: 0 5px;
+  position: relative;
+  height: 400px;
+}
+.card-small-title {
+  font-weight: bold;
+  color: black;
+  &:hover {
+    color: $unpolarise-orange;
+  }
+}
+.card-small-content {
+  font-weight: lighter;
+  color: $unpolarise-dark-grey;
+}
+
+////  CSS for the larger cards ////
+.card-large {
+  display: flex;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.first-card-large {
+  display: flex;
+  padding-bottom: 50px;
+  padding-top: 0px;
+}
+
+.card-large-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 40%;
+  padding: 0 10px 0 20px;
+  justify-content: flex-start;
+  a {
+    color: black;
+  }
+  .card-large-title {
+    font-weight: bold;
+    margin-top: 0;
+    h2 {
+      // margin-top: 0;
+      font-weight: bold;
+      color: black;
+    }
+    &:hover {
+      color: $unpolarise-orange;
+    }
+  }
+  .card-large-text {
+    font-weight: lighter;
+    color: $unpolarise-dark-grey;
+    // overflow: hidden;
+  }
+}
+.card-large-content-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 40%;
+  padding: 0 20px 0 0;
+  justify-content: flex-start;
+  a {
+    color: black;
+  }
+  .card-large-title {
+    font-weight: bold;
+    margin-top: 0;
+    h2 {
+      // margin-top: 0;
+      font-weight: bold;
+      color: black;
+    }
+    &:hover {
+      color: $unpolarise-orange;
+    }
+  }
+  .card-large-text {
+    font-weight: lighter;
+    color: $unpolarise-dark-grey;
+    // overflow: hidden;
+  }
+}
+.card-large-image {
+  flex: 0 0 60%;
+  height: 350px;
+  background-color: #d3d3d3;
+  background-size: cover;
+}
+
+//// CSS for the cards on the show page ////
+.card-show {
+  h2 {
+    font-weight: bold;
+  }
+}
+
+////  CSS for both cards ////
+
+.icon {
+  color: $unpolarise-orange;
+}
+// This is the container that holds the cards for a page
+.cards {
+  margin-top: 40px;
+}
+
+// Card for the description of the weekly topic on the Articles Index page
+.card-top-index {
+  height: 280px;
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 30px;
+}
+// Card for the description of user on the Articles Index page
+.card-description h2 {
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+.card-description p {
+  font-size: 15px;
+}
+
+.card-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.confidence-score img {
+  margin-bottom: 30px;
+}
+
+// Card category for the small cards on the articles on the suggested article page
+.card-category {
+  background-color: $unpolarise-lighter-grey;
+  color: $unpolarise-dark-grey;
+  position: relative;
+  border-radius: 4px;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 0 30px 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-category-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  p {
+    padding-top: 10px;
+  }
+}
+
+// Card for Login page
+
+.card-login {
+  background-color: $unpolarise-lighter-grey;
+  color: $unpolarise-dark-grey;
+  // position: relative;
+  // border-radius: 4px;
+  // padding: 60px 60px 20px 60px;
+  // margin: 20px 0 30px 0;
+  padding: 0px 0px;
+  margin: auto;
+  height: 200px;
+}
+
+.card-login-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    margin-top: 20px;
+  }
+}
+
+// Card for Signup page
+
+.card-signup {
+  background-color: $unpolarise-lighter-grey;
+  color: $unpolarise-dark-grey;
+  padding: 0px 0px;
+  margin: auto;
+  height: 450px;
+}
+
+.card-signup-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    margin-top: 20px;
+  }
+}
+
+// Card for the Analytics page
+
+#card-graph-1 {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 30px;
+  width: 100%;
+  h4 {
+    font-size: 17px;
+    font-weight: bolder;
+    padding-left: 40px;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+#card-graph-2 {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  h4 {
+    font-size: 17px;
+    font-weight: bolder;
+    padding-left: 40px;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
+
+#card-graph-3 {
+  background-color: $unpolarise-lighter-grey;
+  color: $gray;
+  position: relative;
+  border-radius: 4px;
+  padding: 20px 0px 30px 0px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .top-5-wrapper {
+    padding-right: 0px;
+  }
+  .top-5 {
+    padding-left: 30px;
+  }
+  h4 {
+    font-size: 17px;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  ol {
+    padding-left: 20px;
+  }
+  p {
+    color: $unpolarise-dark-grey;
+    font-size: 15px;
+  }
+
+  .button-top-5 {
+    width: 200px;
+    margin: auto;
+    float: right;
+    padding-right: 45px;
+  }
+}
+
+// Cards that hold the messages that say the graphs are empty
+.empty {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card-empty-graph-left {
+  height: 600px;
+}
+.card-empty-graph-top-right {
+  height: 370px;
+}
+.message-empty {
+  // padding: 0 15px;
+  width: 400px;
+  margin: auto;
+}

@@ -1,0 +1,83 @@
+// Custom button for forms
+.btn-form-unpolarise {
+  background-color: $unpolarise-orange-opacity-dark !important;
+  border: none;
+  color: $unpolarise-off-white;
+  border-radius: 3px;
+  padding: 8px 24px;
+  // margin-left: 8px;
+}
+
+// Main custom button to be used on page
+.btn-main-unpolarise {
+  border: 1px solid $unpolarise-orange-opacity-light;
+  color: $unpolarise-orange-opacity-dark;
+  padding: 8px 24px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius:3px;
+  text-align: center; // centering the text in the button
+  &:hover {
+    color: $unpolarise-orange-opacity-dark;
+    background-color: $unpolarise-orange-opacity-lightest;
+  }
+  &:active {
+    color: $unpolarise-orange-opacity-dark;
+  }
+  a {
+    color: $unpolarise-orange-opacity-dark;
+  }
+}
+
+.btn-home-unpolarise {
+  background-color: $unpolarise-orange !important;
+  border: none;
+  color: $unpolarise-off-white;
+  border-radius: 3px;
+  padding: 8px 24px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  // margin-left: 8px;
+}
+
+// Button on the home page to search
+.btn-homepage-search {
+  margin-left: 3px;
+}
+
+.custom-width {
+  width: 750px;
+}
+
+// 'Manual' button on logged in home page
+.manual-button {
+  background: image-url('full-button.svg');
+  height: 126px;
+  width: 107px;
+  display: block;
+}
+
+.manual-button:hover {
+  background: image-url('clicked-button.svg');
+  transition: 0.1s;
+}
+
+a.manual-button{
+  margin: auto;
+}
+
+// Button Analytics page
+
+.btn-card-unpolarise {
+  background-color: #FF2E12;
+  border: none;
+  color: $unpolarise-off-white;
+  border-radius: 3px;
+  padding: 8px 24px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  // margin-left: 8px;
+  &:hover {
+    color: $unpolarise-off-white;
+    background-color: $unpolarise-orange;
+  }
+}
+

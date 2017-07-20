@@ -10,6 +10,38 @@
   padding-bottom: 5em;
 }
 
+.padded-text {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.padded-top-bottom {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.padded-top-20 {
+  padding-top: 20px;
+}
+
+.padded-top {
+  padding-top: 35px;
+}
+.margin-bottom {
+  margin-bottom: 30px;
+}
+.margin-top {
+  margin-top: 30px;
+}
+
+.padded-bottom {
+  padding-bottom: 60px;
+}
+
+.negative-margin {
+  margin-top: -45px;
+  margin-bottom: -45px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -23,3 +55,111 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+// Kill the text decoration of all the links on the page
+a:hover {
+  text-decoration: none;
+}
+
+// Make all active button (the moment after clicking before anything happens) the correct colour
+a:active {
+  color: $unpolarise-orange;
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+// Styling on one a tag on the articles index page
+
+#categorisation a {
+  color: $unpolarise-orange;
+  &:hover {
+    color: $unpolarise-orange-opacity-dark;
+  }
+}
+
+// Set a minimum height for each body so that the footer always appears at the base of a page
+// .body-container {
+//   min-height: calc(100vh - #{$navbar-height} - #{$footer-height} );
+//   // padding-top: $navbar-height;
+// }
+
+body {
+  // margin-top: $navbar-height;
+  // position: relative;
+  padding-top: $navbar-height;
+  padding-bottom: $footer-height;
+}
+
+.body-container {
+  min-height: calc(100vh - #{$navbar-height} - #{$footer-height} );
+}
+
+// General classes for text
+.italic {
+  font-style: italic;
+}
+
+.txt-para {
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.txt-para2 {
+  font-weight: lighter;
+  font-size: 17px;
+  line-height: 1.5em;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.header {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 36px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.header2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  margin-top: 75px;
+  margin-bottom: 40px;
+}
+
+.fa-pencil-square-o {
+  color: $unpolarise-orange;
+}
+
+.fa-trash-o {
+  color: $unpolarise-orange;
+}
+
+.unpolarise-orange {
+  color: $unpolarise-orange;
+}
+
+
+// General classes for images
+
+.width-500 {
+  width: 700px;
+}
+
+.img-width-20 {
+  width: 40px;
+}
+
